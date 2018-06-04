@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>padding百分值</title>
+	<style>
+		.box{
+			padding:10% 50%;
+			background: black;
+			margin-bottom: 5em;
+			width: 100px;/*padding百分比值基于父元素*/
+			height:100px;
+			border:solid red;
+		}
+		.inline{
+			width: 200px;
+			border:1px solid;
+
+		}
+		.inline span{
+			padding:50%;
+			background: red;
+			font-size: 0;/*strut支撑高度*/
+		}
+		.inline1 {
+			width: 200px;
+			border:solid;
+			margin-top: 5em;
+			float:right;
+			margin-right: 5em;
+		}
+		.inline1 span{
+			padding:50%;
+			border:solid;
+		}
+		/*基于包含快的padding*/
+		.out{
+			width: 500px;
+			height:500px;
+			border:solid lime;
+			position: relative;
+			margin:auto;
+		}
+		.cet{
+			width:300px;
+			height:200px;
+			border:solid pink;
+			margin:1em auto;
+		}
+		.ins{
+			width: 100px;
+			height:100px;
+			border:solid red;
+			margin:1em auto;
+			position: absolute;
+			padding:50%;/*百分比值基于包含块*/
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="inline">
+		<span></span>
+	</div>
+	<div class="inline1">
+		<span>内联padding断行dfg</span>
+	</div>
+	<div class="out">
+		<div class="cet">
+			<div class="ins"></div>
+		</div>
+	</div>
+</body>
+</html>

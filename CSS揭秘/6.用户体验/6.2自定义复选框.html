@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自定义复选框</title>
+	<style>
+		input[type=checkbox]+label::before{
+			content:'\a0';
+			display:inline-block;
+			vertical-align: .2em;
+			width:.8em;
+			height:.8em;
+			margin-right:.2em;
+			border-radius:.2em;
+			background:silver;
+			text-indent:.15em;
+			line-height: .65;
+		}
+		input[type=checkbox]{
+			position:absolute;
+			clip:rect(0,0,0,0);
+		}
+		input[type=checkbox]:checked + label::before{
+			content:'\2713';
+			background:yellow;
+		}
+	</style>
+</head>
+<body>
+	<article>
+		<input type="checkbox" id="awesome">
+	    <label for="awesome">Awesome</label>
+	</article>
+	
+</body>
+</html>

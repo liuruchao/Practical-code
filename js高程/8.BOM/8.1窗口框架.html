@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>窗口框架</title>
+</head>
+
+	<frameset rows="160,*">
+		<frame src="../../css-wolrd/5.内联元素与流/5.4水平垂直居中弹框.html" name="topFrame">
+		<frameset cols="50%,50%">
+			<frame src="../../css-wolrd/6.流的破坏与保护/6.1float.html" name="leftFrame">
+			<frame src="../../css-wolrd/5.内联元素与流/5.2line-height.html" name="rightFrame">
+		</frameset>
+	</frameset>
+<script type="text/javascript">
+	function say(){
+		alert('afd');
+	}
+	top.frames[0].say();
+</script>
+</html>

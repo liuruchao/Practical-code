@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自定义下划线</title>
+	<style>
+		p{
+			width: 200px;
+
+		}
+		p:first-of-type{
+			text-decoration:underline;
+		}
+		p:nth-of-type(2){
+			border-bottom:1px solid red;
+			padding-bottom:5px;
+		}
+		p:nth-of-type(3){
+			border-bottom:1px dashed lime;
+			padding-bottom:5px;
+		}
+		p:nth-of-type(4){
+			background: pink;
+			background:linear-gradient(to right,gray 5px,transparent 0,transparent 10px,red 0,red 15px,transparent 0,transparent 20px) repeat-x;
+			background-size:20px 2px;
+			background-position: 0 1.5em;
+			box-shadow:0 2px 0 -1px gray;
+		}
+		p:nth-of-type(5){
+			background:repeating-linear-gradient(to right,gray,gray 5px,transparent 5px,transparent 10px);
+			background-size:10px 2px;
+			background-position: 0 1.5em;
+		}
+	</style>
+</head>
+<body>
+	<p>使用最简单的underline属性值,但不能设置样式，和距文本距离</p>
+	<p>使用border-bottom来模拟，换行就会出现错误,只会出现在元素底</p>
+	<p>使用border-bottom来模拟，换行就会出现错误</p>
+	<p>使用渐变背景，样式完全自控</p>
+	<p>使用渐变背景，样式完全自控,用repeating高度不受控</p>
+
+</body>
+</html>

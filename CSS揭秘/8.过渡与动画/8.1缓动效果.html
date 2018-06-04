@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>缓动效果</title>
+	<style>
+		.wrap{
+			height:400px;
+			width:60px;
+			border-bottom:10px lime solid;
+			margin:2em auto;
+			background: linear-gradient(to bottom,#B5F0EB,white) no-repeat;
+		}
+		.ball{
+			height:40px;
+			width: 40px;
+			margin:auto;
+			border-radius: 50%;
+			background:radial-gradient(circle,white,red);
+			animation:bounce 3s ease-in;
+		}
+		@keyframes bounce{
+			50%,80%,to{
+				transform: translateY(360px);
+				animation-timing-function:ease-out;
+			}
+			65%{
+				transform:translateY(200px);
+			}
+			90%{
+				transform: translateY(300px);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="ball"></div>
+	</div>
+	
+</body>
+</html>

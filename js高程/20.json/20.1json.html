@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>json</title>
+</head>
+<body>
+	<script>
+		
+		var book={
+			title:"professional javascript",
+			authors:[
+			   "Nicholas, Zakas"
+			],
+			edition:3,
+			age:12,
+			school:"yizhong",
+			releaseDate:new Date()
+		};
+		//js值序列化为json字符串
+		var jsonText=JSON.stringify(book,4);
+		alert("json字符串"+jsonText);
+		//将json字符串解析为js值
+		var bookCopy=JSON.parse(jsonText);
+		alert("js值"+bookCopy.title);
+		//序列化选项  过滤出指定项
+		var jsonText1=JSON.stringify(book,["title","edition"],"--");
+		alert("过滤后"+jsonText1);
+		//过滤器也可以是函数
+		var jsonText2=JSON.stringify(book,function(key,value){
+			switch(key){
+				case "authors":
+				return value.join("-");
+				case "year":
+				return 5000;
+				case "edition":
+				return undefined;
+				default:
+				return value;
+			}
+		},4);
+		alert("函数过滤"+jsonText2);
+		//parse解析，还原函数
+		var bookCopy1=JSON.parse(jsonText,function(key,value){
+			if(key=="releaseDate"){
+				return new Date(value);
+			}else{
+				return value;
+			}
+
+		});
+		alert('解析'+bookCopy1.releaseDate);
+	</script>
+</body>
+</html>

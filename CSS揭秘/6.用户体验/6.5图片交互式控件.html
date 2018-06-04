@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片交互式控件</title>
+	<style>
+		.img-slider1{
+			position: relative;
+			display:inline-block;
+		}
+		.img-slider1>div{
+			position: absolute;
+			top:0;
+			left:0;
+			bottom:0;
+			width:50%;
+			overflow: hidden;
+			resize:horizontal;
+			max-width: 400px;
+		}
+		.img-slider1>div:after{
+			content:'';
+			position: absolute;
+			width: 1em;
+			height:1em;
+			background: white;
+			right:0;
+			bottom:0;
+		}
+		.img-slider2{
+			position: relative;
+			display:inline-block;
+		}
+		.img-slider2>div{
+			position: absolute;
+			top:0;
+			left:0;
+			bottom:0;
+			width:50%;
+			overflow: hidden;
+			max-width: 400px;
+		}
+		.img-slider2>input{
+			position: absolute;
+			bottom:2em;
+			left:50%;
+			transform:translateX(-50%) scale(2);
+			filter:contrast(.5);
+			width: 50%;
+		}
+	</style>
+</head>
+<body>
+	<!-- 纯css实现 -->
+	<div class="img-slider1">
+		<div>
+			<img src="20150120_ifold3.jpg" alt="before">
+		</div>
+		<img src="20150120_ifold4.jpg" alt="after">
+	</div>
+	<!-- js脚本实现 -->
+	<div class="img-slider2">
+		<div id="wrap">
+			<img src="20150120_ifold3.jpg" alt="before">
+		</div>
+		<img src="20150120_ifold4.jpg" alt="after">
+		<input type="range" id="range" max="100" min="0" value="50">
+	</div>
+</body>
+<script>
+	window.onload=function(){
+		var wrap=document.getElementById("wrap");
+		var range=document.querySelector("#range");
+        range.oninput=function(){
+        	wrap.style.width=this.value+'%';
+        }
+	}
+</script>
+</html>

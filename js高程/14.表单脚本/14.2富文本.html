@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>富文本</title>
+</head>
+<body>
+	<div contenteditable="true" id="editable">
+		<form  name="form3" method="post">
+		<input type="text" value="文本">
+		<input type="number" value="数字">
+		<input type="range" value="范围">
+		<input type="date" value="日期">
+		<input type="submit" value="提交" name="submit">
+	</form>
+		附近的考虑是否将奥拉夫发生了地方
+	</form>
+	</div>
+	<script>
+		var div=document.getElementById('editable');
+		div.document.execCommand("delete",false,null);
+		div.document.execCommand("backcolor",false,'red');
+
+	</script>
+</body>
+</html>

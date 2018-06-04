@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>实战表单阴影</title>
+	<style>
+		form{
+			width: 300px;
+			
+			margin: 10px auto;
+			padding:5px;
+			border-radius: 30px;
+			box-shadow: 0 4px 8px #C5BBBB; 
+			line-height: 30px;
+			background-image: -webkit-linear-gradient(top,#31b2c3,#0483a0);
+		}
+		form input{
+		    border-radius: 30px;
+		    border:1px solid #D4CECE;
+		    height:30px;
+		    font-size: 18px;
+		    
+		}
+		form input:focus{
+			outline:0;
+			border: solid #aaa;
+			box-shadow: 0 0px 1px #bbb inset;
+		}
+		form input:nth-of-type(1){
+			padding-left: 10px;
+		}
+		form input:nth-of-type(2){
+			
+			width: 20%;
+		}
+	</style>
+</head>
+<body>
+	<form action="">
+		<input type="text" placeholder="test shadow ">
+		<input type="submit" value="go">
+	</form>
+</body>
+</html>

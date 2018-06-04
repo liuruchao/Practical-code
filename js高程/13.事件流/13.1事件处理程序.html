@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件处理程序</title>
+</head>
+<body>
+	<button onclick="showMessage()">html事件处理程序</button>
+	<button id="one">DOM0级事件处理程序</button>
+	<button id="two">DOM2级事件处理程序</button>
+	<button>IE事件处理程序</button>
+	<script>
+		var btn=document.querySelectorAll("button");
+		var id='worldwide';
+		function showMessage(){
+			alert('类型'+event.type);
+			alert('this对象'+this.id);
+		}
+		btn[1].onclick=showMessage;
+		//DOM0 程序中this引用当前对象，此时事件处理程序在元素的作用域中运行
+		btn[2].addEventListener('click',showMessage,false);
+		btn
+		//DOM2级 最后false表示冒泡阶段调用程序
+		btn[2].removeEventListener('click',showMessage,false);
+		//移除
+		btn[3].attachEvent("onclick",showMessage);
+		//IE事件程序在全局作用域中运行
+	</script>
+</body>
+</html>

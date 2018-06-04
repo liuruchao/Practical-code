@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>outline</title>
+	<style>
+		.div1{
+			width: 100px;
+			height:100px;
+            outline: 10px solid;
+            border: 5px dashed red;
+            margin:55px;
+		}
+		.div2{
+			width: 0;
+		}
+		.div2:before{
+			content:'love的love';
+			
+			outline:1px solid red;
+		}
+	</style>
+</head>
+<body>
+	<div class="div1"></div>
+	<div class="div1"></div>
+
+	<div class="div2"></div>
+</body>
+</html>

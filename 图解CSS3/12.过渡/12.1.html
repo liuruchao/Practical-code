@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>过渡</title>
+	<style>
+	/*触发操作：:hover\:active\:focus\:checked
+	\媒体查询\js触发;*/
+		div{
+			width:100px;
+			height:100px;
+			background:green;
+            border-radius: 10px;
+            transition:background 2s linear,
+            border-radius 1s linear,
+            width 1s linear -4s,
+            height 1s ease-out 999999s;/*闭触发用1s,但延迟后相当于不能恢复*/
+            margin:10px;
+
+		}
+		div:first-child:hover{
+			background: red;
+            border-radius: 50%;
+
+		}
+		div:nth-child(2):active{
+            width: 200px;
+		}
+		div:nth-child(3):hover{
+			height: 120px;
+			transition: height 4s linear;
+			/*开触发用2s,*/
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+</html>

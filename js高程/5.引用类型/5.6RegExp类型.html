@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RegExp类型</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var text='qcat,bat,kat';
+		var pattern1=/at/g;//所有“at"实例
+		var pattern2=/[bc]at/i;//不区分大小写，bat或cat
+		var pattern3=/.at/gi;//所有以at结尾三个字符
+		var matches = pattern3.exec(text);
+        console.log('input表示正在应用的字符串'+matches.input);
+        console.log('匹配字符串位置'+matches.index);
+        console.log('数组第一位是匹配到的'+matches[0]);
+        //第二次调用会接着上个匹配项匹配，前提正则表达式是全局
+        var matches = pattern3.exec(text);
+        console.log('第二次匹配'+matches[0]);
+        //test方法匹配到则返回true
+        console.log('test匹配'+pattern2.test(text));
+        console.log('test匹配'+pattern2.test('we'));
+
+	</script>
+</body>
+</html>

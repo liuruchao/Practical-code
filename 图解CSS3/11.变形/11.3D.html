@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3D</title>
+	<style>
+	.test{
+		width: 500px;
+		height: 500px;
+		border:solid;
+		margin:auto;
+		transform-origin: center;/*默认*/
+		transform-style: preserve-3d;
+		perspective: 500px;
+	}
+	.test div{
+		width: 200px;
+		height:200px;
+		border:1px solid red;
+		margin-right: 20px;
+		display: inline-block;
+	}
+	.test div:first-child:hover{
+		transform: translate3d(100px,100px,-300px);
+	}
+	.test div:nth-of-type(2):hover{
+		transform:rotateZ(45deg);
+	}
+</style>
+</head>
+<body>
+	<div class="test">
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+</body>
+</html>

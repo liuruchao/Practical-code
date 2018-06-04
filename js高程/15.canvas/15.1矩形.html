@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>矩形</title>
+</head>
+<body>
+	<canvas id="canvas">您的浏览器不支持canvas</canvas>
+</body>
+<script>
+	var canvas=document.getElementById('canvas');
+	canvas.width="500";
+	canvas.height="500";
+	if(canvas.getContext){
+		var context=canvas.getContext('2d');
+		context.fillStyle='red';
+		context.fillRect(10,10,100,100);
+        context.fillStyle="green";
+		context.fillRect(60,60,100,100);
+		context.strokeStyle="black";
+		context.lineWidth='10';
+		
+		context.lineJoin="round";
+		context.strokeRect(100,100,100,100);
+		context.strokeStyle="lime";
+		context.lineWidth='10';
+		
+		context.strokeRect(130,130,100,100);
+		context.lineCap="round";
+        context.clearRect(70,70,10,10);
+	}
+</script>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>float</title>
+	<style type="text/css">
+	    div:first-child{
+	    	width: 300px;
+	    	height:300px;
+	    	border:solid;
+	    }
+		div:first-child img{
+			width: 200px;
+			height: 200px;
+			float: left;
+		}
+		div:first-child{
+			margin:0;
+		}
+        .block{
+        	background: rgba(0,0,0,0.4);
+        	height:100%;
+        }
+        .block:first-line{
+        	background: red;
+        	color:white;
+        }
+        .layout{
+        	width: 200px;
+        	height:200px;
+        	border:solid;
+        	resize: both;
+        	4r
+        }
+        .layout .left{
+        	width: 50%;
+        	height:100%;
+        	border:1px solid red;
+        	float:left;
+
+        }
+        .layout .right{
+        	margin-left: 52%;/*核心代码*/
+        }
+        .layout .newRight{
+        	overflow: hidden;/*BFC的特性，不影响外面元素布局*/
+        	border-left:10px solid transparent;
+        }
+	</style>
+</head>
+<body>
+	<div>
+		<img src="../1.jpg" alt="">
+		<p>测试下行框盒子与浮动元素的不可重叠性</p>
+		<div class="block">该块状盒子可以和浮动元素重叠,但行框盒子却被限制了</div>
+	</div>
+    <h3>一侧定宽，一测自适应布局</h3>
+	<div class="layout">
+		<div class="left"></div>
+		<div class="right">测试一下这个自适应布局的文字，通流动性过margin来定位，另一侧保持了流动性。也可以是两侧定宽</div>
+	</div>
+	<h3>更加健壮的自适应布局，不用设置考虑margin的值</h3>
+	<div class="layout">
+		<div class="left"></div>
+		<div class="newRight">测试一下这个自适应布局的文字，通流动性过margin来定位，另一侧保持了流动性。也可以是两侧定宽</div>
+	</div>
+</body>
+</html>

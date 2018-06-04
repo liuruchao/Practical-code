@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>line-height</title>
+	<style type="text/css">
+		div:first-child{
+			line-height: 30px;
+			background: red;
+			margin:10px 0;
+		}
+		div:first-child+div{
+			line-height: 30px;
+			background: red;
+			margin:10px 0;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div>事实证明line-height作用的是行框盒子前的幽灵空白节点</div>
+</body>
+</html>

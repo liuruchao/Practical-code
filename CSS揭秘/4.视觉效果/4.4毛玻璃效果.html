@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>毛玻璃效果</title>
+	<style>
+		html,body{
+			height:100%;
+			padding:0;
+			margin:0;
+		}
+        main{
+           background: url(../2.jpg) no-repeat;
+           background-size:cover;
+           height: 100%;
+        }
+        main div{
+        	position: absolute;
+        	left:0;
+        	right:0;
+        	top:0;
+        	bottom:0;
+            margin:auto;
+            width: 500px;
+            height:300px;
+            border:1px solid;
+            padding:2em;
+            background: hsla(0,0%,100%,.3);
+filter:blur(20px);
+        }
+        /*main div:before{
+        	content:'';
+        	position: absolute;
+        	left:0;
+        	right:0;
+        	top:0;
+        	bottom:0;
+        	background: red;
+        	z-index:-1;
+        	
+        }*/
+	</style>
+</head>
+<body>
+	<main>
+		<div>
+			<p>
+			the only way to get rid of a tempiation is to yield to it.Resist it,and your soul grous sick with longing for the things it has.</p>
+		</div>
+	</main>
+</body>
+</html>

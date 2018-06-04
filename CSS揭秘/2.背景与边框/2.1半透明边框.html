@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>半透明边框</title>
+	<style>
+	    html{height:100%;}
+	    body{
+	    	background: url(../1.jpg) no-repeat;
+	    	background-size:cover;
+	    	
+	    	}
+		div{
+           border:10px solid hsla(0,40%,70%,0.5);
+           background: white;
+           background-clip:padding-box;/*核心代码*/
+           max-width: 20em;
+           padding:2em;
+           margin:20em auto 0;
+           text-align:center;
+		}
+		/*背景图片或颜色沿着盒子的border外围剪切，默认background-clip:border-box。要想边框透明度显示，需改变背景剪裁区域，即padding-box*/
+	</style>
+</head>
+<body>
+	<div>这是一半透明边框</div>
+</body>
+</html>

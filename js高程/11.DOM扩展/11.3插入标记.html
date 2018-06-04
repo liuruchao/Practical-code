@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>插入标记</title>
+	<style type="text/css">
+		div{
+			border:solid;
+			height:100px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<p>一个短发</p>
+		<span>范德萨</span>
+	</div>
+	<div></div>
+	<script type="text/javascript">
+		var all=document.querySelectorAll('div');
+		all[0].innerHTML="<a href='#'>子元素替换点击</a>";
+		all[1].outerHTML="<p>将该元素及子元素替换</p>";
+		var a=all[0].querySelector("a");
+		 //判断被检测节点是否为后代节点
+		 var node1=all[0].contains(a);
+        console.log('是否为后代节点'+node1);
+        var node2=all[0].compareDocumentPosition(a);
+        console.log('dom3:'+node2);
+	</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>style:preserve-3d,perspective</title>
+	<style>
+	   
+	    div{
+	    	width: 600px;
+	    	height: 600px;
+	    	margin: auto;
+	    	background: pink;
+	    	perspective: 500px;
+	    	perspective-origin: center;
+	    }
+		.rotate1{
+			width: 200px;
+			height: 200px;
+			background:linear-gradient(to bottom,green,yellow);
+			margin: auto;
+			transform-origin: bottom;
+			transition: 1s all;
+			
+		}
+		.rotate2{
+			width: 200px;
+			height: 200px;
+			background:linear-gradient(to bottom,red,yellow);
+			margin: 30px auto;
+			transform-origin: bottom;
+			transition: 1s all;
+		}
+		.rotate1:hover{
+			transform: rotateY(180deg);
+		}
+		.rotate2:hover{
+            transform: rotateY(180deg);
+		}
+	</style>
+</head>
+<body>
+	<div>
+	<div class="rotate1">测试背面</div>
+	<div class="rotate2"></div>
+    </div>
+</body>
+</html>

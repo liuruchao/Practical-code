@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>插入换行</title>
+	<style>
+
+	   dt,dd{
+			/*有默认的左边距*/
+			margin-left:0;
+			display: inline-block;
+
+		}
+		dt::before{
+			content:"\A";
+			white-space: pre;
+		}
+	</style>
+</head>
+<body>
+	<dl>
+		<dt>Namegjhgjgj:</dt>
+		<dd>lea verou<br /></dd>
+
+		<dt>我们收发货地:</dt>
+		<dd>发大幅度</dd>
+
+		<dt>location:</dt>
+		<dd>earth</dd>
+	</dl>
+</body>
+</html>

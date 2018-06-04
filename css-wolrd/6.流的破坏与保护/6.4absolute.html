@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>absolute</title>
+	<style type="text/css">
+	    html,body{
+	    	height:100%;
+	    }
+		.container{
+			width:500px;
+			height:500px;
+			border:solid;
+        }
+		.container div:first-child{
+			width:100%;/*此时包含块是根标签*/
+			height: 100px;
+			border: 1px solid lime;
+			position: absolute;
+			left:0;top:0;
+			padding:0;
+		}
+		.container div:last-child{
+			width:inherit;/*此时继承父元素*/
+			height: 100px;
+			border: 1px solid lime;
+			position: absolute;
+			left:0;top:100px;
+		}
+		.box{
+			width: 500px;
+			height: 100px;
+			border:solid;
+			position: relative;
+		}
+		.box div{
+			position: absolute;
+			border:1px solid red;
+		}
+		.absolute{
+			font-size:2em;
+			color:red;
+		}
+		.absolute:after{
+			content:'图标';
+			color:lime;
+			position: absolute;
+			font-size:0.5em;
+			margin-left: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div>此时包含块是根标签,宽度百分比按根标签算</div>
+		<div>此时继承父元素的宽度</div>
+	</div>
+	<div class="box">
+		<div>此时元素的最大宽度，也就是自适应宽度由包含块决定，最大为包含块宽度</div>
+	</div>
+	<div class="absolute">无依赖绝对定位(测试跟随性)</div>
+</body>
+</html>

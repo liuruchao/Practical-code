@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>node类型</title>
+</head>
+<body>
+	<i>第一个节点</i><div>测试node</div><span>下一个节点</span>
+	<script type="text/javascript">
+		var div=document.getElementsByTagName('div')[0];
+		var all=document.getElementsByTagName('body')[0];//取得节点
+		function node(nodes){
+		if(nodes.nodeType==1){
+			console.log('该node类型为element');
+			console.log('元素名element.nodeName:'+nodes.nodeName.toLowerCase());
+			console.log('element值为空'+ nodes.nodeValue);
+		}else if(nodes.nodeType==3){
+			console.log('该node类型为text');
+			console.log('元素名text.nodeName:'+nodes.nodeName.toLowerCase());
+			console.log('text值为'+ nodes.nodeValue);
+		}
+	  }
+        var divParent=div.parentNode;//父节点
+        var text=div.firstChild;//文本节点
+        node(div);
+        node(divParent);
+        node(text);
+        var arrayofNodes=Array.prototype.slice.call(all.childNodes,0)
+        for(let i=0;i<arrayofNodes.length;i++){
+        	console.log('子节点：'+arrayofNodes[i]);
+        }
+        var previous=div.previousSibling;//上一个节点
+        console.log('上一个节点');
+        node(previous);
+        var next=div.nextSibling;//下一个节点
+        console.log('下一个节点');
+        node(next);
+        var divSon=document.createElement('div');
+        divSon.className='son';
+        div.appendChild(divSon);//往父节点末尾添加
+        var textSon=document.createTextNode('hello DOM');
+        divSon.insertBefore(textSon,divSon.firstChild);
+        var clone=div.cloneNode(true);//克隆节点及子代
+        div.replaceChild(clone,divSon);
+	</script>
+</body>
+</html>

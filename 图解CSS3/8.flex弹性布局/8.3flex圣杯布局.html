@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>flex圣杯布局</title>
+	<style>
+	    html,body{
+	    	height:100%;
+	    	padding:0;
+	    	margin:0;
+	    }
+		.layout{
+			height: 100%;
+			display: flex;
+			flex-direction:column;
+		}
+		.layout>div:nth-child(odd){
+			flex:1 1 auto;
+			background:#9E9393;
+			color:white;
+			text-align: center;
+		}
+		.middle{
+			flex:11 1 auto;
+			background: grey;
+			display: flex;
+			justify-content:space-around;
+		}
+		.middle .left{
+			flex: 1 1 20%;
+			background: red;
+			text-align: center;
+			border:10px solid white;
+		}
+		.middle .center{
+			flex:1 1 50%;
+			background: blue;
+			text-align: center;
+		}
+		.middle .right{
+			flex:1 1 20%;
+			background: lime;
+			text-align: center;
+		}
+		@media (max-width: 768px){
+			.middle{
+				flex-direction: column;
+                
+
+			}
+			.middle .left{
+				height:20%;
+			}
+		}
+		/*当设备宽度小于768px时，设置主轴为column,此时子项目平分高度，不受设置*/
+	</style>
+</head>
+<body>
+	<div class="layout">
+		<div class="header">header</div>
+		<div class="middle">
+			<div class="left">left</div>
+			<div class="center">center</div>
+			<div class="right">right</div>
+		</div>
+		<div class="footer">footer</div>
+	</div>
+</body>
+</html>

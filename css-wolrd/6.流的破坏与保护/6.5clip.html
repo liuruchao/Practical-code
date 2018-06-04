@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>cilp</title>
+	<style type="text/css">
+	    div{
+	    	border:1px solid lime;
+	    }
+		div div:first-child{
+			position: absolute;
+			width: 200px;
+			height: 200px;
+			border:2px solid;
+			clip:rect(10px,120px,120px,0);
+			background: red;
+		}
+		div div:nth-child(2){
+			width:200px;
+			height: 200px;
+			border:solid;
+			position:fixed;
+			top:220px;
+	</style>
+</head>
+<body>
+	<div>
+	<div>clip要起作用，元素必须是绝对定位或固定定位(方向上都从上和左计算)</div>
+	<div>clip要起作用，元素必须是绝对定位或固定定位</div>
+	</div>
+</body>
+</html>

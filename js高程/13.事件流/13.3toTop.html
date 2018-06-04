@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>向上置顶</title>
+	<style>
+	body{
+		height: 10000px;
+	}
+	a{
+		display:inline-block;
+		position:fixed;
+		right:2em;
+		bottom:2em;
+
+	}
+</style>
+<script src="EventUtil.js"></script>
+</head>
+<body>
+	<a href="" id="btn">向上置顶</a>
+	<script>
+		EventUtil.addHandler(window,'load',function(){
+		function getViewport(){  
+			if(document.compatMode == "BackCompat"){
+				return {
+					width:document.body.clientWidth,
+					height:document.body.clientHeight
+				};
+			}else{
+				return {
+					width:document.documentElement.clientWidth,
+					height:document.documentElement.clientHeight
+				};
+			}
+		}
+		var btn=document.getElementById('btn');
+		//取得视口宽高度函数
+		var viewPort=getViewport(); //取得视口高度
+		var timer=null;
+		var istop=true;
+		var scrollTop=document.documentElement.scrollTop || document.body.scrollTop;
+			if(scrollTop<=viewPort.height){
+				btn.style.display='none';
+			}else{
+				btn.style.display='block';
+			}
+		EventUtil.addHandler(window,'scroll',function(){
+
+			var scrollTop=document.documentElement.scrollTop;
+			if(scrollTop<=viewPort.height){
+				btn.style.display='none';
+			}else{
+				btn.style.display='block';
+			}
+			if(!istop){
+				clearInterval(timer);
+			}
+
+		     });
+		EventUtil.addHandler(btn,'click',function(event){
+			    var event=EventUtil.getEvent();
+				event.preventDefault();
+				timer=setInterval(function(){
+					var scrollTop=document.documentElement.scrollTop;
+					var ispeed=Math.floor(-scrollTop/6);
+					document.documentElement.scrollTop=scrollTop+ispeed;
+					istop=true;
+					if(scrollTop==0){
+						clearInterval(timer);
+					}
+				},50);
+			});
+	});
+		
+
+	</script>
+</body>
+</html>

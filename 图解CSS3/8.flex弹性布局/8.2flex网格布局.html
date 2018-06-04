@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>flex网格布局</title>
+	<style>
+	    *{
+	    	margin:0;padding:0;
+	    }
+	    html,body{
+	    	height:100%;
+	    }
+		.Grid1,.Grid2{
+			height: 100%;
+			border:1px solid #D6CCCC;
+			border-radius:10px;
+			background:white;
+			padding:10px;
+			display: flex;
+			margin-bottom: 20px;
+		}
+		.Grid1-cell{
+			border: 1px solid #D6CCCC;
+			flex:1;
+			margin:10px;
+		}
+		.Grid1-cell:nth-of-type(2){
+			flex:2;
+		}
+		.Grid2-cell{
+			width: 200px;
+			border:1px solid red;
+			flex-shrink: 1;
+		}
+		.Grid2-cell:nth-of-type(2){
+			flex-shrink: 0;
+		}
+	</style>
+</head>
+<body>
+	<!-- flex-grow 放大比例 -->
+	<div class="Grid1">
+		<div class="Grid1-cell">3</div>
+		<div class="Grid1-cell">3</div>
+		<div class="Grid1-cell">3</div>
+	</div>
+	<!-- flex-shrink 缩小比例 -->
+	<div class="Grid2">
+		<div class="Grid2-cell"></div>
+		<div class="Grid2-cell"></div>
+		<div class="Grid2-cell"></div>
+	</div>
+</body>
+</html>

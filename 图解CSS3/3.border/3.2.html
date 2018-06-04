@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		.shadow{
+			margin-top: 30px;
+			height: 300px;
+			width: 300px;
+			border:1px solid;
+			box-shadow: 0 0 0 10px red;
+		}
+		div:nth-child(2){
+			box-shadow:inset 3px 3px 3px green;
+
+		}
+		.text-image img{
+			border: 1px solid;
+			width: 200px;
+			height:200px;
+			border-radius:10px;
+			box-shadow: 10px 10px red;
+		}
+		.test-many{
+			box-shadow: 3px 3px green,4px 4px red;
+			/*多阴影*/
+
+		}
+		.formFiled{
+			display: table-cell;
+			padding:5px;
+			border-radius: 10px;
+			box-shadow: 3px 0 3px #B0A5A5;
+			background: grey
+		}
+		.formFiled input:nth-of-type(n){
+			
+			
+		}
+	</style>
+</head>
+<body>
+	<h4>实战表单</h4>
+	<!-- 表单结构 -->
+	<form action="" class="formWrapper">
+		<!-- 搜索表单 -->
+		<div class="formFiled clearfix">
+			<input type="text" required="" placeholder="Search for css3 html5">
+		
+		<!-- 提交表单 -->
+		
+			<input type="submit" class="btn submit" value="go">
+		</div>
+	</form>
+	<div class="shadow"></div>
+	<div class="shadow"></div>
+	<div class="text-image"><img src="../185111361877726219.jpg" alt=""></div>
+	<h4>多阴影</h4>
+	<div class="test-many shadow"></div>
+	
+</body>
+</html>

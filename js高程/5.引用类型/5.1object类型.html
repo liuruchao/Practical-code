@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>引用类型</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//创建object实例
+		var person1=new Object(); //构造函数
+		person1.name='jack';
+		person1.age=29;
+		var person2={  //对象字面量
+			name:'jack',
+			age:29
+		}
+		var person3={};
+		person3.name='jack';
+		person3.age=29;
+		//访问对象属性时一般用点表示法，若属性名中有空格，或者变量则用方括号
+		console.log('点表示法'+person1.name);
+		console.log('括号表示法'+person2['age']);
+	</script>
+</body>
+</html>

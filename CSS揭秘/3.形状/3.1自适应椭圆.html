@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自适应椭圆</title>
+	<style>
+	div{
+		background: red;
+		display: inline-block;
+		border:solid;
+	}
+	div:first-of-type{
+		width: 100px;
+		height:100px;
+		background: red;
+		display: inline-block;
+		border-radius: 50px;
+	}
+	div:nth-of-type(2){
+		width: 200px;
+		height: 100px;
+		background: red;
+		border-radius: 50px;
+	}
+	div:nth-of-type(3){
+		width: 200px;
+		height:150px;
+		border-radius: 50% / 50%;
+	}
+	div:nth-of-type(4){
+		width: 150px;
+		height:150px;
+		border-radius:50% 50% 0 0 / 100% 100% 0 0;
+	}
+	div:nth-of-type(5){
+		width: 100px;
+		height:200px;
+		border-radius:50px;
+	}
+	div:nth-of-type(6){
+		width: 200px;
+		height:100px;
+		border-radius: 100%/50% 0 0 50%;
+	}
+	div:nth-of-type(7){
+		width:200px;
+		height:100px;
+		border-radius: 100%/100% 0 0 0 ;
+			}
+	</style>
+</head>
+<body>
+	<div>园</div>
+	<div>椭圆</div>
+	<div>单独设置宽高值</div>
+	<div>半椭圆</div>
+	<div>立体圆柱</div>
+	<div>沿纵轴劈开的半椭圆</div>
+	<div>四分之一椭圆</div>
+</body>
+</html>

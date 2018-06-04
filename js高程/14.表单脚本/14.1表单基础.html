@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>基础表单</title>
+</head>
+<body>
+	<form action="" name="form1">
+		<input type="text" value="文本" size='5' maxlength="10">
+		<input type="number" value="数字" autofocus>
+		<input type="range" value="范围">
+		<input type="email" value="邮件">
+		<input type="date" value="日期">
+	</form>
+	<form action="" name="form2">
+		<input type="text" value="文本">
+		<input type="number" value="数字">
+		<input type="range" value="范围">
+		<input type="email" value="邮件">
+		<input type="date" value="日期">
+	</form>
+	<form  name="form3" method="post">
+		<input type="text" value="文本">
+		<input type="number" value="数字">
+		<input type="range" value="范围">
+		<input type="date" value="日期">
+		<input type="submit" value="提交" name="submit">
+	</form>
+	<span id="show"></span>
+	<script>
+		var forms=document.forms;//表单集合
+		var firstForm=forms[0];//第一个表单
+		var nextForm=forms["form2"]//第二个表单
+		var nums=forms["form3"].elements;//第三个表单中的所有控件
+		console.log('控件数量'+nums.length);
+		var sub=nums["submit"];
+		var show=document.getElementById('show');
+		sub.addEventListener('mouseover',function(event){
+			var target=event.target;
+			var text=nums[0].value;
+			var number=nums[1].value;
+			var range=nums[2].value;
+			show.innerHTML=text+number+range;
+			
+		});
+		nums[0].addEventListener('focus',function(event){
+            var t =event.target;
+            t.select();
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>变形-旋转缩放</title>
+	<style>
+	   *{
+	   	padding: 0;
+	    	margin:0;
+	   }
+	    html,body{
+	    	height:100%;
+	    	
+	    }
+	    body{
+	    	display: flex;
+	    	align-items: center;
+	    	justify-content: center;
+	    }
+		.transform{
+			border:solid;
+			width: 500px;
+			height:500px;
+			padding: 2em;
+
+
+			
+		}
+		.transform ul{
+			text-align: justify;
+			text-align-last: justify;
+		}
+		.transform ul li{
+             width: 60px;
+             height:60px;
+             border-radius:50%;
+             display: inline-block;
+             background-image:linear-gradient(to bottom,orange 20%,green);
+             color:white;
+             text-align: center;
+             text-align-last: center;
+             line-height: 60px;
+             transition: all 0.8s ease-in-out;
+             
+		}
+		/*变形*/
+        .transform ul:first-of-type li:hover{
+        	-webkit-transform:rotate(360deg) scale(1.2); 
+        }
+        .transform ul:last-of-type li:hover{
+        	-webkit-transform: rotate(-360deg) scale(0.7);
+        }
+	</style>
+</head>
+<body>
+	<div class="transform">	<h1>顺时针旋转360度放大1.2倍</h1>
+	<ul>
+		<li>赞</li>
+		<li>赞</li>
+		<li>赞</li>
+		<li>赞</li>
+	</ul>
+	<h1>逆时针旋转360度缩小0.7倍</h1>
+	<ul>
+		<li>赞</li>
+		<li>赞</li>
+		<li>赞</li>
+		<li>赞</li>
+	</ul>
+    </div>
+
+</body>
+</html>

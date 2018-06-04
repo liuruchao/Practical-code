@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>连字符断行</title>
+	<style>
+		div{
+			width: 100px;
+			border:1px solid;
+			display: inline-block;
+		}
+		.c1{
+			/*css1属性，贪婪算法，两端对齐，*/
+			text-align: justify;
+		}
+		.c3{
+			/*css3属性*/
+			hyphens:auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="text">the only way to get rid of a temptation is to yield to it</div>
+	<input type="range" value=100 max="200" min="10" id="range">
+	<span id="show"></span>
+	<button id="btn1">css1方法justify</button>
+	<button id="btn2">css3属性hyphens</button>
+	<script>
+		var text=document.querySelector("#text"),
+		    range=document.querySelector("#range"),
+		    btn1=document.querySelector("#btn1"),
+		    btn2=document.querySelector("#btn2"),
+		    show=document.querySelector("#show");
+	    function addEventListener(element,type,handle){
+	    	if(element!=null){
+	    		element.addEventListener(type,handle,false);
+	    	}
+	    }
+	    addEventListener(range,"change",function(event){
+	    	var value=event.target.value;
+	    	show.innerHTML="元素宽度："+value;
+	    	text.style.width=value+"px";
+	    });
+        addEventListener(btn1,"click",function(){
+        	text.className="c1";
+        	//将类名数组串拆分成数组
+        	var classNames=text.className.split(/\s+/);
+        	if(classNames[0]!="c1"){
+        		classNames.splice(0,1);
+        	}
+        	//再将数组拼成字符串
+        	text.className=classNames.join(" ");
+        });
+        addEventListener(btn2,"click",function(){
+        	text.className="c3";
+        	//将类名数组串拆分成数组
+        	var classNames=text.className.split(/\s+/);
+        	if(classNames[0]!="c3"){
+        		classNames.splice(0,1);
+        	}
+        	//再将数组拼成字符串
+        	text.className=classNames.join(" ");
+        })
+	</script>
+</body>
+</html>

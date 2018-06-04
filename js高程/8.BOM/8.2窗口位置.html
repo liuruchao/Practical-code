@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>窗口位置</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var leftPos=(typeof window.screenLeft =="number")?window.screenLeft:window.screenX;
+		var topPos=(typeof window.screenTop == "number")?window.screenTop:window.screenY;
+		window.moveBy(10,40);
+		
+        
+		console.log('浏览器距屏幕左侧距离'+leftPos);//返回浏览器窗口距屏幕视窗的距离
+		console.log('浏览器距屏幕上侧距离'+topPos);
+		var pageWidth=window.innerWidth,
+		    pageHeight=window.innerHeight;
+		var framesWidth=window.outerWidth;
+		console.log('页面视图区宽度'+pageWidth);
+		console.log('页面视图区高度'+pageHeight);
+		console.log('浏览器窗口 宽度'+framesWidth);
+		var blocked=false;
+		try{
+		var wroxWindow=window.open("../../css-wolrd/5.内联元素与流/5.4水平垂直居中弹框.html","wroxWindow","height=100,width=100,left=300,top=300,resizable=no");
+		if(wroxWindow == null){
+			blocked =true;
+		};
+	  }catch(e){
+	  	blocked=true;
+	  }
+
+	  if(blocked){
+	  	alert('弹出框被屏蔽');
+	  }
+	</script>
+</body>
+</html>

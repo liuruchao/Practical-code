@@ -1,0 +1,55 @@
+*{
+	padding:0;
+	margin:0;
+}
+$bg-color:lime;
+$color-opacity:1;
+//按钮背景色，字体大小，字体颜色
+
+
+//禁用按钮
+@mixin not-allowed($btn-bg-color:red,$btn-fontsize:16px,$btn-font-color:black){
+	width:100px;
+	height:40px;
+	border-radius:10px;
+	background:$btn-bg-color;
+	text-align:center;
+	font-size:$btn-fontsize;
+	color:$btn-font-color;
+	line-height:40px;
+}
+section{
+	display:grid;
+	grid-template-columns:repeat(3,1fr);
+	grid-auto-rows:100px;
+	grid-gap:1em;
+	width:400px;
+	margin:auto;
+	>div{
+		height:100%;
+		background:rgba($bg-color,$color-opacity);
+	}
+	.help{
+		cursor:help;
+	}
+	.move{
+		cursor:move;
+	}
+	.cell{
+		cursor:cell;
+	}
+	.copy{
+		cursor:copy;
+	}
+	.zoon-in{
+		cursor:zoom-in;
+	}
+	.none{
+		cursor:none;
+	}
+
+}
+.btn-not-allowed{
+	@include not-allowed(green,14px,orange);
+	cursor:not-allowed;
+}

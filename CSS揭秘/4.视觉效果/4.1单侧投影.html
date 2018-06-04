@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>单侧投影</title>
+	<style>
+		div{
+			width: 200px;
+			height:100px;
+			background: yellow;
+			margin-bottom: 2em;
+		}
+		/*盒阴影是覆盖在元素上，将重叠部分裁掉，而不是在元素背面*/
+		div:first-of-type{
+			box-shadow: 0 5px 4px -4px black;
+			/*4px模糊半径意味着投影尺寸比元素尺寸大约8px，用第四个属性扩张半径负值，缩小投影尺寸至和元素尺寸相同*/
+		}
+		div:nth-of-type(2){
+			box-shadow: 3px 3px 6px -3px black;
+		} /*实际中只需要设置一半的负值扩张半径，用偏移隐藏另一侧阴影*/
+		div:nth-of-type(3){
+			box-shadow: -5px 0 10px -5px black,5px 0 10px -5px black;
+			/*将单侧投影运用两次*/
+		}
+	</style>
+</head>
+<body>
+	<div>单侧投影</div>
+	<div></div>
+	<div>双侧投影</div>
+</body>
+</html>

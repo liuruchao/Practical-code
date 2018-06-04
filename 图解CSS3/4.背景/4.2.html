@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>全屏背景</title>
+	<style>
+	    html{
+	    	height:100%;
+	    }
+		body{
+			
+			background:url(../1.jpg) no-repeat;
+			background-position: 0 0;
+			background-origin: padding-box;
+			background-clip:border-box;
+			background-size:cover;
+		}
+		div{
+			width: 100px;
+			height:100px;
+			border:1px solid;
+			background:url(../1.jpg) no-repeat;
+			background-size:contain;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+
+</body>
+</html>

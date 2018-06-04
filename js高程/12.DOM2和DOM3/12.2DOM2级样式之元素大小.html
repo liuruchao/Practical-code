@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM2级样式之元素大小</title>
+	<style type="text/css">
+
+	  body{
+	  	height:2000px;
+	  	
+	  }
+		div{
+			width: 500px;
+			height:400px;
+			margin:2em auto;
+			border:solid;
+		}
+		div>div{
+			width:400px;
+			height:300px;
+		}
+		div>div>div{
+			width:300px;
+			height:200px;
+		}
+		.top{
+			position: fixed;
+			display: inline-block;
+			width: 50px;
+			height:50px;
+			border-radius:50%;
+			background:linear-gradient(to bottom,orange,lime);
+			right:2em;
+			bottom:2em;
+			border:solid;
+			padding:5px;
+			font-size:small;
+			color:white;
+		}
+		.top:hover{
+			background:linear-gradient(to top,orange,lime);
+		}
+	</style>
+</head>
+<body>
+	<div>1级
+		<div>2级
+			<div>3级</div>
+		</div>
+	</div>
+	<a class="top">向上制定</a>
+	<script type="text/javascript">
+		//取值的时候碰到子元素，按一根树一颗树的遍历
+		var element=document.querySelectorAll('div');
+		// 取得3级框距视口的上左偏移量
+		function getElementOffset(element){
+			var actulaLeft=element.offsetLeft;
+			var actulaTop=element.offsetTop;
+			var current=element.offsetParent;
+			while(current!=null){
+				actulaLeft+=current.offsetLeft;
+				actulaTop+=current.offsetTop;
+				current=current.offsetParent;
+
+			}
+			return {
+				left:actulaLeft,
+				top:actulaTop
+			}
+		}
+		var rules=getElementOffset(element[0]);
+		console.log("距视口上"+rules.top);
+		console.log("距视口左"+rules.left);
+      //确定视口大小
+      function getViewport(){
+      	if(document.compatMode=="BackCompat"){
+      		return {
+      			width:document.body.clientWidth,
+      			height:document.body.clientHeight
+      		}
+      	}else{
+      		return{
+      			width:document.doucmentElement.clientWidth,
+      			height:document.doucmentElement.clientHeight
+      		}
+      	}
+      }
+	</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>复杂背景图</title>
+	<style>
+	div{
+		width: 300px;
+		height:300px;
+		margin-right: 1em;
+		display: inline-block;
+	}
+		div:nth-of-type(1){
+			background: lime;
+			background-image:repeating-linear-gradient(0deg,transparent,transparent 30px,hsla(0,0%,100%,.6) 0,hsla(0,0%,100%,.6) 60px),repeating-linear-gradient(90deg,hsla(0,0%,100%,.6),hsla(0,0%,100%,.6) 30px,transparent 0,transparent 60px);
+		}
+		div:nth-of-type(2){
+			background: white;
+			background-image:linear-gradient(90deg,red 30%,transparent 0),linear-gradient(0,red 30%,transparent 0);
+			background-size:30px;
+		}
+		div:nth-of-type(3){
+			background: blue;
+			background-image: linear-gradient(0deg,transparent 29px,white 0), linear-gradient(90deg,transparent 29px,white 0);
+			background-size: 30px;
+
+		}
+		div:nth-of-type(4){
+			background: lime;
+			background-image:repeating-linear-gradient(0deg,white ,white 1px,transparent 0,transparent 30px),repeating-linear-gradient(90deg,white,white 1px ,transparent 0,transparent 30px);
+		}
+		div:nth-of-type(5){
+			background: #655;
+			background-image:radial-gradient(white 15px,transparent 0);
+			background-size: 60px;
+		}
+		div:nth-of-type(6){
+			background-image:linear-gradient(0deg,white 15px,grey 0),linear-gradient(0deg,grey 15px,white 0);
+			background-size: 30px 15px,30px 15px;
+			background-position: 0 0,0 15px;
+
+		}
+	</style>
+</head>
+<body>
+	<div>网格</div>
+	<div>网格</div>
+	<div>网格</div>
+	<div>多网格</div>
+	<div>径向渐变</div>
+	<div>棋盘</div>
+</body>
+</html>

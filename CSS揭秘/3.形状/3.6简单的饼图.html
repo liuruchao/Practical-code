@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>简单的饼图</title>
+	<style>
+		.pie{
+			width:100px;
+			height:100px;
+			border-radius: 50%;
+			background: yellowgreen;
+			background-image:linear-gradient(to right,transparent 50%,#655 0);
+			/*左半圆绿色，有半圆棕色*/
+		}
+		.pie::before{
+			content:'';
+			display: block;
+			margin-left:50%;
+			height:100%;
+			background-color:inherit;/*不能用background否则会继承渐变颜色*/
+			border-radius: 0 100% 100% 0 / 50%;
+            transform-origin:left;
+            transform:rotate(45deg);
+					}
+		/*添加遮罩*/
+	</style>
+</head>
+<body>
+	<div class="pie"></div>
+</body>
+</html>

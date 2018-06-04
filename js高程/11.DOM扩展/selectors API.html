@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>selectors API</title>
+</head>
+<body>
+	<table class="table testMatch">
+		<tr>
+			<td class="td1">1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		var table=document.querySelector(".table");
+		if(table){
+			table.style.border="1px solid";
+		}
+		var cells=table.querySelectorAll("td");
+		for(let i=0,len=cells.length;i<len;i++){
+			cells[i].style.color="blue";
+		}
+		var rows=table.querySelectorAll("tr");
+		for(let i=0,len=rows.length;i<len;i++){
+			rows[i].style.background="red";
+		}
+
+		// selectors API level2 中的matchesSelector方法
+		console.log("判断调用元素是否与该选择器匹配"+table.webkitMatchesSelector("table.testMatch"));
+		//编写一个用于多浏览器的使用该方法包装函数
+		function matchesSelectorNew(element,selector){
+			if(element.matchesSelector){
+				return element.matchesSelector(selector);
+			}else if(element.webkitMatchesSelector){
+				return element.webkitMatchesSelector(selector);
+			}else if(element.mswebkitMatchesSelector){
+				return element.msMatchesSelector(selector);
+			}else if(element.mozMatchesSelector){
+				return element.mozMatchesSelector(selector);
+			}else{
+				throw new Error("not supported");
+			}
+		}
+		console.log(matchesSelectorNew(cells[0],cells[0].td1));
+		//元素遍历
+		console.log("返回子元素个数"+rows[0].childElementCount);
+		//返回
+        console.log("返回第一个子元素文本节点值" + rows[0].firstElementChild.firstChild.nodeValue);
+        console.log("返回相邻下一个元素节点名"+ rows[0].nextElementSibling.nodeName.toLocaleLowerCase());
+	</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>梯形标签页</title>
+	<style>
+		/*主要用变形中的旋转、伪元素*/
+		div{
+			width: 100px;
+			height:50px;
+			position: relative;
+			background: red;
+		}
+		div:before{
+			content:'';
+			position: absolute;
+			left:0;
+			top:0;
+			right:0;
+			bottom:0;
+			background: green;
+			transform:perspective(.5em) rotateX(5deg) scaleY(1.3);
+			transform-origin:bottom;
+			z-index: -1;
+		}
+	</style>
+</head>
+<body>
+	<div>transform</div>
+</body>
+</html>

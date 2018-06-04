@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>伪元素</title>
+	<style>
+		div{
+			padding:10px;
+			border:1px solid;width:200px;
+
+		}
+		div:first-child::first-letter{
+           float: left;
+           color:#903;
+           padding:4px 2px;
+           font-size: 36px;
+
+		}
+		div:nth-of-type(2)::first-line{
+			color:red;
+		}
+		::selection{
+			background: red;
+			color:#fff;
+	</style>
+</head>
+<body>
+	<div>发货的时刻减肥哈史蒂夫解放了顶死</div>
+	<div>法卡是否合法多久啊考核法哈撒法发色</div>
+	<div>范德萨花费金额和咖啡和刻划法客服</div>
+</body>
+</html>

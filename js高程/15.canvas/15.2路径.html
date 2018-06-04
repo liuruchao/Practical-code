@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>路径</title>
+	<style>
+	</style>
+</head>
+<body>
+	<canvas id="canvas">您的浏览器不支持canvas</canvas>
+	<script>
+		var canvas=document.getElementById('canvas');
+		canvas.width='300';
+		canvas.height='300';
+		if(canvas.getContext){
+			var cxt=canvas.getContext('2d');
+			//开始绘制
+			cxt.beginPath();
+			//绘制外圆
+			cxt.arc(150,150,150,0,2*Math.PI,false);
+			//绘制内圆，将路径移到内园某点，否则会出现多余线条,重点
+			cxt.moveTo(290,150);
+			cxt.arc(150,150,140,0,2*Math.PI,false);
+			cxt.strokeStyle='red';
+			cxt.stroke();
+
+			cxt.beginPath();
+			cxt.moveTo(150,150);
+			//垂直线条
+			cxt.lineTo(150,20);
+			//水平线条
+			cxt.moveTo(150,150)
+			cxt.lineTo(30,150);
+			cxt.strokeStyle='lime';
+			cxt.stroke();
+
+			//绘制文本
+			cxt.beginPath();
+			cxt.font="20px Arial";
+			cxt.textAlign='center';
+			cxt.textBaseline='middle';
+			cxt.strokeText='yellow';
+			cxt.fillText(' 12',150,20);
+			//居左
+			cxt.textAlign="start";
+			cxt.fillText('13',150,40);
+			//居右
+			cxt.textAlign="end";
+			cxt.fillText('14',150,60);
+
+		}
+	</script>
+</body>
+</html>

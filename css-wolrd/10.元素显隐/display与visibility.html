@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>显性隐性</title>
+    <style type="text/css">
+    	.displayNone{
+    		width: 50%;
+    		border:1px solid red;
+    		padding:2em;
+    		float:left;
+    		height:500px;
+    	}
+    	.visibilityHidden{
+    		border:1px solid green;
+    		overflow:hidden;
+    		height:500px;
+    		padding:2em;
+
+    	}
+    	.displayNone div{
+    		height:200px;
+    		border:solid orange;
+    	}
+    	.visibilityHidden div{
+    		height: 200px;
+    		border:solid yellow;
+    	}
+    	button:first-of-type{
+    		float: left;
+    		margin:2em;
+    	}
+    	button:nth-of-type(2){
+    		float:right;
+    		margin:2em;
+    	}
+    </style>
+</head>
+<body>
+	<div class="displayNone">
+		<div>上面</div>
+		<div>下面</div>
+	</div>
+	<div class="visibilityHidden">
+		<div>上面</div>
+		<div>下面</div>
+	</div>
+	<button>点击上面的消失</button>
+	<button>点击上面的消失</button>
+    <script type="text/javascript">
+    	var button=document.querySelectorAll('button');
+    	var displayNone=document.getElementsByClassName('displayNone')[0].querySelectorAll('div');
+    	var visibilityHidden=document.getElementsByClassName('visibilityHidden')[0].querySelectorAll('div');
+    	button[0].addEventListener('click',function(){
+            displayNone[0].style.display="none";
+            alert('display:none不占据空间');
+    	});
+    	button[1].addEventListener('click',function(){
+            visibilityHidden[0].style.visibility="hidden";
+            alert('visibilityHidden:hidden占据空间');
+    	});
+    </script>
+</body>
+</html>

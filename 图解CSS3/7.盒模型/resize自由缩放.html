@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>resize自由缩放</title>
+	<style>
+		div{
+			width: 300px;
+			height:300px;
+			border:solid;
+			resize:both;
+			overflow: auto;
+			background: url(../1.jpg) no-repeat;
+			background-size:cover;
+			/*resize需配合overflow生效 ie不支持*/
+		}
+		textarea{
+			resize:horizontal;
+		}
+	</style>
+</head>
+<body>
+	<textarea name="" id="" cols="30" rows="10"></textarea>
+	<div></div>
+</body>
+</html>

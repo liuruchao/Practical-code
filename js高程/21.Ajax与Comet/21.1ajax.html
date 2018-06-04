@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ajax</title>
+</head>
+<body>
+	<span id="show"></span>
+	<button id="btn">点击刷新</button>
+	<script>
+		var span=document.getElementById('show');
+		var btn=document.getElementById('btn');
+        var xhr=new XMLHttpRequest();
+        var response;
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState==4){
+            	if((xhr.status>=200 && xhr.status<300) || xhr.status==304){
+                    response=xhr.responseText;
+            	}else{
+            		alert('unsuccessful:'+xhr.status);
+            	}
+            }
+        };
+        xhr.open("get","http://www.runlrc.site/ajax.txt",true);
+        xhr.send(null);
+        btn.onclick=function(){
+        	span.innerHTML=response;
+        }
+	</script>
+</body>
+</html>

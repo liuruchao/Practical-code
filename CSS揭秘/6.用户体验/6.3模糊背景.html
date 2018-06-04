@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模糊背景</title>
+	<style>
+		main{
+			height:100vh;
+			background:lime;
+			transition:filter .6s;
+		}
+		#switch{
+			display:none;
+			position: fixed;
+			left:0;
+			right:0;
+			top:0;
+			bottom:0;
+			width: 100px;
+			height: 100px;
+			background: white;
+			margin:auto;
+			z-index:1;
+		}
+		#switch:target + main{
+            filter:blur(5px);
+		}
+		#switch:target{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div id="switch">
+    	<p>这是一个弹出层</p>
+    </div>	
+	<main>
+		<a href="#switch">弹出层</a>
+		<p>fdsfafasdljfdkfjlajfldsfdsjfklsflajsdfkldsjfjlsdkjfdsjfkldjssldkfjleijflsdfjldkfdsfdsfdf</p><p>fdsfafasdljfdkfjlajfldsfdsjfklsflajsdfkldsjfjlsdkjfdsjfkldjssldkfjleijflsdfjldkfdsfdsfdf</p><p>fdsfafasdljfdkfjlajfldsfdsjfklsflajsdfkldsjfjlsdkjfdsjfkldjssldkfjleijflsdfjldkfdsfdsfdf</p><p>fdsfafasdljfdkfjlajfldsfdsjfklsflajsdfkldsjfjlsdkjfdsjfkldjssldkfjleijflsdfjldkfdsfdsfdf</p><p>fdsfafasdljfdkfjlajfldsfdsjfklsflajsdfkldsjfjlsdkjfdsjfkldjssldkfjleijflsdfjldkfdsfdsfdf</p><p>fdsfafasdljfdkfjlajfldsfdsjfklsflajsdfkldsjfjlsdkjfdsjfkldjssldkfjleijflsdfjldkfdsfdsfdf</p><p>fdsfafasdljfdkfjlajfldsfdsjfklsflajsdfkldsjfjlsdkjfdsjfkldjssldkfjleijflsdfjldkfdsfdsfdf</p><p>fdsfafasdljfdkfjlajfldsfdsjfklsflajsdfkldsjfjlsdkjfdsjfkldjssldkfjleijflsdfjldkfdsfdsfdf</p><p>fdsfafasdljfdkfjlajfldsfdsjfklsflajsdfkldsjfjlsdkjfdsjfkldjssldkfjleijflsdfjldkfdsfdsfdf</p>
+	</main>
+</body>
+</html>

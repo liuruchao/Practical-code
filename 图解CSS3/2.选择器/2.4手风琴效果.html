@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>手风琴效果</title>
+	<style>
+     .accrodionMenu{
+     	width:500px;
+     	background: #fff;
+     	color:white;
+     	margin:0 auto;
+     	padding:10px;
+     }
+     .accrodionMenu h2{
+     	margin:5px 0;
+     	padding:0;
+     	position: relative;
+     }
+     .accrodionMenu h2:before{
+       content:'';
+       border:5px solid red;
+       height:0;
+       width:0;
+       border-color:transparent transparent transparent #fff ;
+       position: absolute;
+       right:10px;
+       top:15px;
+  }
+  .accrodionMenu h2 a{
+    background: #8f8f8f;
+    border-radius:5px;
+    color:#424242;
+    font-size: 13px;
+    display: block;
+    font-weight: normal;
+    text-shadow: 2px 2px 2px #aeaeae;
+    text-decoration: none;
+    line-height:30px;
+    padding:5px;
+}
+.accrodionMenu p{
+    margin:0;
+    height:0;
+    overflow: hidden;
+    padding:0 10px;
+    -webkit-transition:height 0.5s ease-in;
+    color:black;     	
+}
+.accrodionMenu :target h2 a,
+.accrodionMenu h2 a:focus ,
+.accrodionMenu h2 a:hover,
+.accrodionMenu h2 a:active{
+    background: #2288dd;
+    color:#fff;
+}
+.accrodionMenu :target p{
+    height:20px;
+    overflow: auto;
+}
+.accrodionMenu :target h2:before{
+    border-color:#fff transparent transparent transparent ;
+}
+</style>
+</head>
+<body>
+	<div class="accrodionMenu">
+		<div class="menuSection" id="brand">
+			<h2><a href="#brand">Brand</a></h2>
+			<p>Lorem ipsum dolor</p>
+		</div>
+		
+		<div class="menuSection" id="promotion">
+			<h2><a href="#promotion">promotion</a></h2>
+			<p>Lorem ipsum dolor</p>
+		</div>
+		
+		
+		<div class="menuSection" id="event">
+			<h2><a href="#event">Event</a></h2>
+			<p>Lorem ipsum dolor</p>
+		</div>
+		
+	</div>
+</body>
+</html>

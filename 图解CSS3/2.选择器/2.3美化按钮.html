@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>美化按钮</title>
+    <style>
+    .download-info{
+      text-align: center;
+  }
+  /*默认状态下按钮效果*/
+  .btn{
+      background-color: #0074cc;
+      background-image:-webkit-linear-gradient(top,#0088cc,#0055cc);
+      background-image:-webkit-gradient(linear,0 0,0 100%,from(#0088cc), to(#0055cc));
+      background-repeat:repeat-x;
+      display: inline-block;
+      border:1px solid #ccc;
+      border-color:rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+      border-radius: 6px;
+      color:#fff;
+      cursor:pointer;
+      font-size: 20px;
+      font-weight: normal;
+      filter: progid:dximagetransform.microsoft.gradient(startColorstr='#0088cc',endColorstr='#0055cc',GradientType=0);
+      filter: progid:dximagetransform.microsft.gradent(enabled=flase);
+      padding: 14px 24px;
+      text-align: center;
+      text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+      text-decoration: none;
+      vertical-align:middle;
+  }
+  .btn:active{
+      background-color:#05c;
+      background-image:none;
+      outline: 0;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+      color:rgba(255,255,255,0.75);
+  }
+</style>
+</head>
+<body>
+    <div class="download-info">
+       <a href="#" class="btn">view project on github</a>
+   </div>
+</body>
+</html>

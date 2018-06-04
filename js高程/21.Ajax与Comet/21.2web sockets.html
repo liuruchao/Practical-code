@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>web sockets</title>
+</head>
+<body>
+	<script>
+		var sockets=new WebSocket("ws://www.runlrc.site/ajax.txt");
+		sockets.send("hello");
+		alert(sockets.readyState);
+	</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>变换</title>
+</head>
+<body>
+	<canvas id="canvas">您的浏览器不支持canvas</canvas>
+	<script>
+		var canvas=document.getElementById('canvas');
+		canvas.width='300';
+		canvas.height='300';
+		if(canvas.getContext){
+			var cxt=canvas.getContext('2d');
+			//缩放
+			cxt.scale(0.5,0.5);
+			//开始绘制
+			cxt.beginPath();
+			//绘制外圆
+			cxt.arc(150,150,150,0,2*Math.PI,false);
+			//绘制内圆，将路径移到内园某点，否则会出现多余线条,重点
+			cxt.moveTo(290,150);
+			cxt.arc(150,150,140,0,2*Math.PI,false);
+			cxt.strokeStyle='red';
+			cxt.stroke();
+
+			cxt.beginPath();
+			//变换原点位置
+			cxt.translate(150,150);
+			//旋转表针
+			cxt.rotate(1);
+			//绘制分针
+			cxt.moveTo(0,0);
+			cxt.lineTo(0,-130);
+			//绘制时针
+			cxt.moveTo(0,0);
+			cxt.lineTo(-100,0)
+			cxt.stroke();
+		}
+	</script>
+</body>
+</html>

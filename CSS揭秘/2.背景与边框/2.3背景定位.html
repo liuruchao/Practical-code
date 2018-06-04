@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>背景定位</title>
+	<style>
+	    div{
+	    	width: 200px;
+			height:200px;
+			margin:10px auto;
+	    }
+		div:first-of-type{
+			
+			background:url(../1.jpg) no-repeat bottom right lime;/*回退方案，当css3position值不起作用时*/
+			background-size:50px 50px;
+			background-position: bottom 10px right 20px;
+			
+		}
+		/*css2中background-position只能设置距padding-box左上角的值，在css3中可以添加方向关键值来设置距某个方向的值*/
+		div:nth-of-type(2){
+			background: url(../1.jpg) bottom right no-repeat lime;
+			background-size:50px 50px;
+			background-origin:content-box;
+			padding:10px;
+			background-position: right 20px;
+		}
+		/*通过调整css3中新属性origin为内容盒子，使背景以content-box来定位，再设置padding达到偏移背景图*/
+		div:nth-of-type(3){
+			background:url(../1.jpg) bottom right no-repeat lime;
+			background-size: 50px 50px;
+			background-position: calc(100% - 20px) calc(100% - 10px);
+		}
+		/*使用最开始的沿左上角定位，用calc函数*/
+	</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+</html>

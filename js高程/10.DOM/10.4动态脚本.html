@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动态脚本</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//动态脚本
+		function loadScript(code){
+			var script=document.createElement('script');
+			script.type='text/javascript';
+
+			try{
+				script.appendChild(document.createTextNode(code));
+			}catch(ex){
+				script.text=code;//ie浏览器
+			}
+			document.body.appendChild(script);
+		}
+		//调用
+		loadScript("alert('hello world')");
+		//动态样式表
+		function loadStyle(css){
+			var style=document.createElement('style');
+			style.type='text/css';
+			var head=document.getElementsByTagName('head')[0];
+			try{
+				style.appendChild(document.createTextNode(css));
+			}catch(ex){
+				style.styleSheet.cssText=css;//ie浏览器
+			}
+			head.appendChild(style);
+		}
+		loadStyle("body{background:red}");
+	</script>
+</body>
+</html>

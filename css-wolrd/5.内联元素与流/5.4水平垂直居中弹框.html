@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>水平垂直居中弹框</title>
+	<style type="text/css">
+	  /*弹出动画*/
+	   @keyframes pop{
+	   	0%{
+	   	
+	   		background: rgba(0,0,0,0.1)
+	   	}
+	   	100%{
+	   		
+	   		background: rgba(0,0,0,0.5);
+	   	}
+	   }
+	   @keyframes box{
+        0%{
+        	transform: scale(0.1);
+        }
+        100%{
+        	transform:scale(1);
+        }
+	   }
+	   html{
+	   	height:100%;
+	   }
+	   body{
+	   	background: url(../1.jpg) no-repeat;
+	   	background-size:cover;
+	   	padding:0;
+	   	margin:0;
+	   	height:100%;
+	   }
+	   a{
+	   	display: inline-block;
+	   	text-decoration: none;
+	   	width: 100px;
+	   	height:40px;
+	   	background: linear-gradient(to top,orange,red);
+	   	border-radius: 10px;
+	   	margin:20px;
+	   	box-shadow:1px 1px 2px #988A8A;
+	   	text-align: center;
+	   	line-height: 40px;
+	   	color:white;
+	   }
+	   a:hover,a:active{
+	   	background: linear-gradient(to bottom,orange,red);
+	   }
+		.container{
+			position: fixed;
+			top:0;left:0;right:0;bottom:0;/*格式化高宽度*/
+			background: rgba(0,0,0,0.5);
+			text-align:center;
+			font-size:0;
+			white-space: nowrap;
+			overflow: auto;
+			display: none;
+		}
+		.container:after{
+			content: '';
+			display: inline-block;
+			height:100%;
+			vertical-align: middle;
+		}
+		.container .dialog{
+			display: inline-block;
+			vertical-align: middle;
+			font-size: 14px;
+			white-space: normal;
+			width: 200px;
+			height: 100px;
+			border-radius: 10px;
+			box-shadow: 2px 2px 2px #B2A7A7;
+			background: white;
+			text-align: center;
+			line-height: 100px;
+		}
+        .container:target{
+        	display: block;
+        	animation: pop 1s linear 1;
+        }
+        .container:target .dialog{
+        	animation: box 1s linear 1;
+        }
+        .container:active{
+        	display: none;
+        }
+        /*还没有解决如何再次点击回到初始状态*/
+	</style>
+</head>
+<body>
+	<a href="#popOut">弹出</a>
+	<div class="container" id="popOut">
+		<div class="dialog">欢迎来到前端的世界</div>
+	</div>
+</body>
+</html>

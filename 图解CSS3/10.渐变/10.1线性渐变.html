@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>线性渐变</title>
+	<style>
+		div{
+			width:400px;
+			height:150px;
+			border:1px solid #666;
+			line-height: 150px;
+			text-align: center;
+			font-weight: 900;
+			font-size:30px;
+			color:#fff;
+			margin:10px auto;
+		}
+		div:first-child{
+			background-image:-webkit-linear-gradient(to top,orange,green);
+		}
+		div:first-child{
+			background-image:linear-gradient(to top,orange,green);
+		}
+		div:nth-of-type(2){
+			background-image:linear-gradient(0deg,orange,green);
+		}
+		div:nth-child(3){
+			background-image:linear-gradient(180deg,orange,green);
+		}
+		div:nth-of-type(4){
+			background-image:linear-gradient(45deg,orange,green);
+		}
+		div:nth-child(5){
+			background-image:linear-gradient(to top left,orange,lime);
+		}
+		div:nth-of-type(6){
+			background: linear-gradient(to top right,orange,green);
+		}
+		div:nth-child(7){
+			background: linear-gradient(to right,red,orange,green,blue,indigo,violet);
+		}
+		div:nth-child(8){
+			background: linear-gradient(to right,red 0%,green 25%,orange 50%,pink 100%);
+		}
+		div:nth-child(9){
+			background: linear-gradient(to bottom,red,orange);
+			width: 100px;
+			height:40px;
+			text-align: center;
+			font-size: 1.5em;
+			line-height: 40px;
+			border:none;
+			border-radius:10px;
+		}
+		div:nth-child(9):hover{
+			background: orange;
+			box-shadow: 1px 1px 1px grey;
+		}
+		div:last-child{
+			background-image:repeating-linear-gradient(to bottom left,red 20px,orange 40px);
+			height: 200px;
+		}
+	</style>
+</head>
+<body>
+	<div>使用关键词：:top</div>
+	<div>使用角度：0 deg</div>
+	<div>使用角度：180 deg</div>
+	<div>使用角度：45 deg</div>
+	<div>从右下角向左上角</div>
+	<div>从左下角向右上角</div>
+	<div>制作多色渐变</div>
+	<div>自定义渐变</div>
+	<div>按钮</div>
+	<div>重复渐变</div>
+</body>
+</html>

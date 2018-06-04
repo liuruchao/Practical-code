@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM2样式</title>
+	<style>
+		div:first-of-type{
+			width: 100px;
+			height:100px;
+			background: red;
+		}
+		div:nth-of-type(2){
+			width:200px;
+			height:100px;
+			border:solid;
+			outline:2px dashed lime;
+			outline-offset: -1em;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div>第二个框</div>
+	<script type="text/javascript">
+		var css=document.querySelectorAll('div');
+		//取得内嵌样式表中的属性值
+		var computedStyle=document.defaultView.getComputedStyle(css[0],null);
+		console.log('第一个div');
+		console.log(computedStyle.width);
+		console.log(computedStyle.height);
+		console.log(computedStyle.background);
+		console.log(computedStyle.margin);
+        //操作第二个div
+        css[1].style.backgroundColor="orange";
+        css[1].style.fontSize="2em";
+        console.log('style特性中代码'+css[1].style.cssText);
+        console.log('style特性中属性数量'+css[1].style.length);
+        console.log("循环输出属性值");
+        for(let i=0,len=css[1].style.length;i<len;i++){
+        	prop=css[1].style[i];
+        	value=css[1].style.getPropertyValue(prop);
+        	console.log(prop+":"+value);
+        }
+        //操作样式表
+        //取表
+        var sheet=document.styleSheets[0];
+        var rules=sheet.cssRules || sheet.rules;//取样式表规则
+        function showRules(rule){
+        	console.log("输出样式表中代码"+rule.style.cssText);
+        	console.log("规则的名称"+rule.selectorText);
+        	console.log("单独属性值width"+rule.style.width);
+        }
+        console.log("调用第一个样式表第一条规则")
+        //调用第一个样式表第二条规则
+        showRules(rules[0]);
+        console.log("调用第一个样式表第二条规则")
+        //调用第一个样式表第二条规则
+        showRules(rules[1]);
+        //插入规则
+        if(sheet.insertRule){
+        	sheet.insertRule("body{background:pink}",0);
+        }else{
+        	sheet.insertRule("body","background:pink",0);
+        }
+	</script>
+</body>
+</html>

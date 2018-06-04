@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>基本包装类型</title>
+</head>
+<body>
+	<script type="text/javascript">
+	//引用类型与基本包装类型的主要区别是对象的生存期
+	var s1='some text';
+	s1.color='red';
+	console.log('string对象已被销毁'+s1.color);
+	//以上代码相当于
+	var s2=new String('some text');
+	s2.color='red';
+	s2=null;
+	var s3=new String('some text');
+	//基本包装类型是对象
+	console.log('基本类型的typeof:'+ typeof s1);
+	console.log('基本包装类型的typeof:'+ typeof s3);
+	console.log('基本类型的instanceof:'+ s1 instanceof String);
+	console.log('基本包装类型的instanceof:');
+	console.log( s3 instanceof String );
+    //boolean类型
+    var falseObject= new Boolean(false);
+    var result = falseObject && true;
+    console.log('布尔表达式中的所有对象都会被转化为true:'+result);
+    //number类型
+    var num=10.0006;
+    console.log('返回指定小数位,也可以自动舍入'+ num.toFixed(3));
+    console.log('返回指数表示法'+num.toExponential(1));
+    //string类型
+    var stringValue='hello world';
+    console.log("length属性"+ stringValue.length);
+    console.log('返回指定位置的字符'+ stringValue.charAt(2));
+    //字符串拼接
+    var resultString=stringValue.concat(" i'm liuruchao");
+    console.log('返回新字符串'+resultString);
+    //操作字符串
+    var sliceString=stringValue.slice(1,4);
+    console.log('slice返回两个参数位置之间字符'+sliceString);
+    var substr=stringValue.substr(1,5);
+    console.log('substr返回第二个参数指定个数的字符'+substr);
+    var substring=stringValue.substring(-3);
+    console.log('substring会把所有负值转化成0;'+substring);
+    console.log('indexof返回该字符所在位置'+stringValue.indexOf('e'));
+    //小练习：遍历选中字符的所有位置
+    var testIndexOf='hello world hello';
+    var position=new Array();
+    var pos=testIndexOf.indexOf('l');
+    
+    while(pos>-1){
+    	position.push(pos);
+    	pos=testIndexOf.indexOf('l',pos+1);
+    }
+    console.log('输出所有位置'+position);
+    //trim去除前缀和后缀空格
+    var testTrim=' hes fse fes fes';
+    console.log('未去前缀和后缀空格之前'+testTrim);
+    console.log('去空格后'+testTrim.trim());
+    //大小写转化
+    var stringCase='hello World';
+    console.log('大写转化'+stringCase.toLocaleUpperCase());
+    console.log("小写转化" + stringCase.toLocaleLowerCase());
+    //字符串模式匹配
+    var stringMaches="cat,bat,sat,fat";
+    var pattern=/.at/;
+    var matches=stringMaches.match(pattern);
+    console.log(matches.index);
+    console.log(matches[0]);
+    var posSearch=stringMaches.search(/bat/);
+    console.log('第一个匹配项索引'+posSearch);
+    //replace替换
+    var resultReplace=stringMaches.replace(/at/g,'liu');
+    console.log('替换后'+resultReplace);
+    //split分隔符
+    var stringSplit="bat,cat.gae/get";
+    var split=stringSplit.split('/');
+    console.log('分隔后生成的数组'+split);
+    //localCompare比较方法
+    var stringCompare='yellow';
+    console.log('字符串在字符串参数前面返回负值'+stringCompare.localeCompare('zoo'));
+    console.log('字符串比字符串参数一样返回0'+stringCompare.localeCompare('yellow'));
+    console.log('字符串在字符串参数后面返回正值'+stringCompare.localeCompare('brick'));
+	</script>
+</body>
+</html>

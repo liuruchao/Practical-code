@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文本控制</title>
+	<style type="text/css">
+		div:first-child{
+			width: 100px;
+			outline:1px solid red;
+			margin:2em auto;
+			text-indent:-10%;
+			word-break: break-all;
+			border:1px solid lime;
+			
+		}
+		div:nth-child(2){
+			width: 100px;
+			border:1px solid;
+			text-indent:-2em;
+			padding-left:2em;
+		}
+		div:nth-child(3){
+			border:1px solid;
+			margin-top: 3em;
+			animation:textIn 2s infinite alternate;
+		}
+		@keyframes textIn{
+			0%{
+				letter-spacing: -200px;
+			}
+			100%{
+				letter-spacing: 0;
+			}
+		}
+		.contains{
+			border:solid;
+			margin-left: 2em;
+			text-indent: -10%;
+		}
+		.contains span{
+			
+		}
+	</style>
+</head>
+<body>
+	<div>测试一下text-indent</div>
+	<div>
+		<p>提问：发送卡了飞机到拉萨解放啦</p>
+		<p>回答：放假了撒娇地方啦手机登录福建省劳动纠纷拉时间到了发几点发类似的纠纷拉水电费拉师傅</p>
+		
+	</div>
+	<div>字符动态飞入效果,赶快测试一下</div>
+	<div class="contains">
+		<span>房间辣看见对方垃圾袋</span>
+	</div>
+</body>
+</html>

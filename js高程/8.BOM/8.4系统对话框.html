@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>系统对话框</title>
+</head>
+<body>
+	<button id="change">点击切换背景色</button>
+	<script type="text/javascript">
+		var element=document.getElementsByTagName('body')[0];
+		function createColor(){
+			
+			element.style.background='pink';
+		}
+		if(confirm('你确定要把背景换成粉红色吗')){
+              createColor();
+		}
+		var change=document.getElementById('change');
+		function changeColor(){
+          var result=prompt('输入英文颜色值改变背景色','');
+           if(result==null){
+           	alert('未添加颜色')
+           }else{
+           element.style.background=result.toLowerCase();
+		}
+	   }
+		change.addEventListener('click',changeColor);
+        //犯的大错：刚开始函数名和变量名都设置为change，使得函数不能调用
+	</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>边框内圆角</title>
+	<style type="text/css">
+		div{
+			width: 200px;
+			height: 70px;
+			line-height: 70px;
+			background: white;
+			border-radius:10px;
+			outline:10px solid pink;
+			/*outline描边只能是矩形，不能跟着设置的圆角*/
+			text-align:center;
+			margin-left: 100px;
+			background: lime;
+			border-radius:10px;
+			box-shadow: 0 0 0 4px pink;
+            /*利用阴影来填充圆角与描边留下的缝隙*/
+		}
+
+       span{
+       	display: inline-block;
+       	line-height: normal;
+       	vertical-align: middle;
+       	word-break: break-all;
+       }
+	</style>
+</head>
+<body>
+	<div><span>i have a dream.it's become a achevement</span></div>
+</body>
+</html>

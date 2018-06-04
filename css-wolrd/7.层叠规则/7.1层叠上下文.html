@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>层叠上下文</title>
+	<style type="text/css">
+	    .father{
+	    	position: relative;
+	    	left:100px;
+	    	top:100px;
+	    	border:solid;
+	    	height:600px;
+	    	background: pink;
+	    	z-index: 0;/*父元素为层叠上下文，子元素z-index负值不能突破背景色，隐藏到后面*/
+	    }
+		.front{
+			background: red;
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			z-index:1; /*创建层叠上下文*/
+		}
+		.back{
+			background: lime;
+			width: 300px;
+			height:300px;
+			position: absolute;
+			z-index:0;
+			
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+	<div class="front">
+		前面
+	</div>
+	<div class="back">
+		后面
+	</div>
+   </div>
+</body>
+</html>

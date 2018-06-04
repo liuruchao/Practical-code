@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>多重边框</title>
+	<style>
+		div{
+			max-width: 20em;
+			border:10px solid red;
+			margin:5em auto 0;
+			padding:2em;
+		}
+		div:first-child{
+			box-shadow: 0 0 0 10px grey,0 0 0 20px lime;
+			/*box-shadow可以支持多个数量，有个阴影半径*/
+		}
+		div:nth-child(2){
+			outline:10px dashed grey;
+		}
+		/*这两种方法都是不会影响后面布局，阴影方法可以有多种颜色叠加，但只能是实线，描边方法可以多种线条类型，但只能一种颜色*/
+		div:nth-child(3){
+			outline: 2px dashed grey;
+			background: black;
+			outline-offset: -10px;
+			border-radius:10px;
+			border:none;
+		}
+		/*outline-offset属性可以设置负值，让描边进入元素里*/
+	</style>
+</head>
+<body>
+	<div>box-shadow</div>
+	<div>outline</div>
+	<div>内嵌</div>
+</body>
+</html>

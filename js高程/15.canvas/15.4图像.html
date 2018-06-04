@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图像</title>
+</head>
+<body>
+	<img src="未标题-1.jpg" alt="" id="image1">
+	<canvas id="canvas" style="border:1px solid;">您的浏览器不支持canvas</canvas>
+	<script>
+		var canvas=document.getElementById('canvas');
+		var image=document.getElementById('image1');
+		canvas.width='300';
+		canvas.height='300';
+		
+		if(canvas.getContext){
+			var cxt=canvas.getContext('2d');
+			cxt.beginPath();
+            cxt.drawImage(image,10,10,50,50,20,20,50,50);
+            //阴影
+            cxt.shadowOffsetX='2';
+            cxt.shadowOffsetY='2';
+            cxt.shadowColor='red'
+            cxt.shadowBlur='10';
+            cxt.fillStyle='green';
+            cxt.fillRect(0,0,50,50);
+            //渐变
+            cxt.beginPath();
+            var gradient=cxt.createLinearGradient(50,50,100,100);
+            gradient.addColorStop(0,"lime");
+            gradient.addColorStop(1,"pink");
+            cxt.fillStyle=gradient;
+            cxt.fillRect(50,50,50,50);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>内容溢出</title>
+	<style>
+		div:nth-child(n){
+           width: 100px;
+           border: 1px solid;
+           height:50px;
+           margin: 100px;
+		}
+		div:first-child{
+			overflow-y: auto;
+		}
+		div:nth-of-type(2){
+			overflow-y:hidden;
+		}
+		div:nth-of-type(3){
+			overflow-y:scroll;
+		}
+		div:nth-of-type(4){
+			overflow-y:no-display;
+		}
+		div:nth-of-type(5){
+			overflow-x:auto;
+			white-space: nowrap;
+		}
+		div:last-child{
+			overflow-y: visible;
+		}
+	</style>
+</head>
+<body>
+	<div>附件是锻炼腹肌拉伤大家发垃圾的上了飞机撒都浪费</div>
+	<div>附件是锻炼腹肌拉伤大家发垃圾的上了飞机撒都浪费</div>
+	<div>附件是锻炼腹肌拉伤大家发垃圾的上了飞机撒都浪费</div>
+	<div>附件是锻炼腹肌拉伤大家发垃圾的上了飞机撒都浪费</div>
+	<div>附件是锻炼腹肌拉伤大家发垃圾的上了飞机撒都浪费</div>
+	<div>附件是锻炼腹肌拉伤大家发垃圾的上了飞机撒都浪费</div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>继承</title>
+</head>
+<body>
+	<script type="text/javascript">
+	//原型链为实现继承的主要方法
+	function Father(name,age){
+		this.name='jack';
+		this.age=49;
+		this.firstName='jane';
+		this.colors=['red','black'];
+	}
+	Father.prototype.sayAge=function(){
+		alert(this.age);
+	};
+	function Son(){
+		this.name='bob';
+		this.age=12;
+	}
+	Son.prototype=new Father();
+	var newSon1=new Son();
+	console.log('newSon已经继承了Father的属性和方法：'+newSon1.firstName);
+	newSon1.sayAge();
+	newSon1.colors.push('pink');
+	console.log('增添了一个共享属性值'+newSon1.colors);
+	//使用原型链的缺点是子类型实例对象会共享超类型实例对象的属性方法
+	var newSon2=new Son();
+	console.log('另一个实例共享了上一个实例添加的值'+newSon2.colors);
+
+	//组合继承
+    function SuperType(name){
+    	this.name=name;
+    	this.colors=['red','black'];
+    }
+    SuperType.prototype.sayAge=function(){
+    	alert(this.age);
+    }
+    function SubType(age){
+    	SuperType.call(this,'tony');//借用构造函数继承，继承不共享的属性
+    	this.age=age;
+    }
+    SubType.prototype=new SuperType();//通过原型链继承共享的方法
+    SubType.prototype.constructor=SubType;
+    var instance1=new SubType(67);
+    instance1.colors.push('blue');//不会影响到其他实例的引用
+    console.log('实例1的值：'+ instance1.colors);
+    instance1.sayAge();
+    var instance2=new SubType(25);
+    console.log('组合模式不会影响到其他实例的引用'+instance2.colors);
+    instance2.sayAge();
+	</script>
+	
+</body>
+</html>

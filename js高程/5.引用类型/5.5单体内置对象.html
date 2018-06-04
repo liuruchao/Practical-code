@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>单体内置对象</title>
+</head>
+<body>
+	<button id="random">点击求随机数</button>
+	<script type="text/javascript">
+	//Global对象 URI编码方法
+	var uri="http://www.wrox.com/illegal value.html#start";
+	console.log('encodeURI不会对本身属于URI的特殊字符进行编码。例如冒号。正斜杠');
+	var resultEncode=encodeURI(uri);
+	console.log(resultEncode);
+    console.log('encodeURIComponent则会对它发现的任何非标准字符进行编码');
+    var Component=encodeURIComponent(uri);
+    console.log(Component);
+    //对应的解析方法
+    console.log('decodeURI解析');
+    console.log(decodeURI(resultEncode));
+    console.log('decodeURIComponent解析');
+    console.log(decodeURIComponent(Component));
+    //Math对象
+    var max=Math.max(3,56,90,2);
+    console.log('最大值'+max);
+    var min=Math.min(45,3,2,6);
+    console.log('最小值'+min);
+    console.log('绝对值'+Math.abs(-90));
+    //利用apply找数组中最大小值
+    var values=[2,5,1,6,9];
+    console.log('apply找数组中的最大值'+Math.max.apply(Math,values));
+    //舍入方法
+    var number=25.6;
+    console.log('向上舍入'+Math.ceil(number));
+    console.log('向下舍入'+Math.floor(number));
+    console.log('四舍五入'+Math.round(number));
+    //random求随机数
+    var random=document.getElementById('random');
+    function dig(){
+    	if(random){
+    	var randoms=Math.floor(Math.random()*6+1);
+    	alert(randoms);
+      }else{
+      	alert('元素不存在');
+      }
+    }
+    random.addEventListener('click',dig);
+	</script>
+</body>
+</html>

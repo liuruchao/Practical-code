@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>border</title>
+	<style>
+		div[class=colors]{
+			width: 100px;
+			height:100px;
+			border:10px solid red;
+			border-radius:15px 0;
+			/*仅火狐浏览器支持*/
+			-moz-border-top-colors:#a0a #909 #808 #707 #606 #505 #404 #303; 
+			-moz-border-right-colors:#a0a #909 #808 #707 #606 #505 #404 #303;
+			-moz-border-bottom-colors:#a0a #909 #808 #707 #606 #505 #404 #303;
+			-moz-border-left-colors:#a0a #909 #808 #707 #606 #505 #404 #303;
+		}
+		.border-image{
+			border:40px solid red;
+			width: 400px;
+			height:400px;
+            -moz-border-image: url(../未标题-1.jpg) 30% repeat;
+            -webkit-border-image: url(../未标题-1.jpg) 20%/30px repeat;
+
+		}
+		.border-radius1{
+			height: 50px;
+			width: 50px;
+			border:10px solid;
+			border-radius: 5px 10px/10px 5px;
+			border-top-left-radius: 10px 10px;
+		}
+		.border-radius2{
+			height: 50px;
+			width:50px;
+			border-width:10px 5px 15px 20px;
+			border-style: solid;
+			border-color:red blue pink green;
+			border-radius: 20px;
+		}
+		.crsire{
+			width: 100px;
+			height: 100px;
+			background: pink;
+			border-radius: 50%;
+		}
+		.demo2{
+			width: 100px;
+			height:50px;
+			background: lime;
+			border-radius: 50px 50px 0 0;
+		}
+		.demo3{
+			width: 50px;
+			height:50px;
+			background: pink;
+			border-radius: 100% 0 0 0;
+		}
+		.demo4{
+			width: 100px;
+			height:50px;
+			background: lime;
+			border-radius: 50%;
+		}
+	</style>
+</head>
+<body>
+	<div class="colors"></div>
+	<h2>border-image</h2>
+	<div class="border-image">fds</div>
+	<h2>border-radius</h2>
+	<div class="border-radius1"></div>
+	<div class="border-radius2"></div>
+	<h2>圆</h2>
+	<div class="crsire"></div>
+	<h2>半圆</h2>
+    <div class="demo2"></div>
+    <h2>扇形</h2>
+    <div class="demo3"></div>
+    <h2>椭圆</h2>
+    <div class="demo4"></div>
+</body>
+</html>

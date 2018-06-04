@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>多列布局</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		body,html{
+			height:100%;
+		}
+		.wrapper{
+			width: 50%;
+			margin:0 auto;
+			border: 1px solid #ccc;
+			padding:5px;
+			/*多列布局*/
+			-moz-columns: 20px 5;
+			-webkit-columns: 20px 5;
+			columns:  20px 5;
+			height:100%;
+			/*列边距*/
+			-moz-column-gap:2em;
+			-webkit-column-gap:2em;
+			column-gap: 2em;
+			/*列边框*/
+			-moz-column-rule:2px dashed ;
+			-webkit-column-rule:1px dashed;
+			column-rule: 2px dashed;
+			/*高度属性*/
+			column-fill:balance;
+		}
+		.wrapper>h1{
+			/*跨列显示*/
+			-moz-column-span:all;
+			-wekit-column-span:all;
+			column-span:all;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>fjlsajfals</h1>
+		<p>jj发的啥了放假啊塑料袋放进adsl放假啦发的放假啦空手道解放立刻就收到了伐就是打开发撒发射点发顺丰发生士大夫士大夫士大夫士大夫十分士大夫士大夫首发式发生发射点发生发射点发射点
+		jj发的啥了放假啊塑料袋放进adsl放假啦发的放假啦空手道解放立刻就收到了伐就是打开发撒发射点发顺丰发生士大夫士大夫士大夫士大夫十分士大夫士大夫首发式发生发射点发生发射点发射点</p>
+		<h1>fjlasdjfl</h1>
+		<p>
+		jj发的啥了放假啊塑料袋放进adsl放假啦发的放假啦空手道解放立刻就收到了伐就是打开发撒发射点发顺丰发生士大夫士大夫士大夫士大夫十分士大夫士大夫首发式发生发射点发生发射点发射点
+		jj发的啥了放假啊塑料袋放进adsl放假啦发的放假啦空手道解放立刻就收到了伐就是打开发撒发射点发顺丰发生士大夫士大夫士大夫士大夫十分士大夫士大夫首发式发生发射点发生发射点发射点
+		jj发的啥了放假啊塑料袋放进adsl放假啦发的放假啦空手道解放立刻就收到了伐就是打开发撒发射点发顺丰发生士大夫士大夫士大夫士大夫十分士大夫士大夫首发式发生发射点发生发射点发射点</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>flex伸缩布局骰子</title>
+	<style>
+		.center{
+			display:-webkit-flex;
+			width: 100px;
+			height:100px;
+			margin:auto;
+			justify-content: center;
+			align-items: center;
+			border: solid;
+		}
+		.center>.item{
+              height: 50px;
+              width: 50px;
+              border:solid;
+		}
+		.box{
+			width: 300px;
+            height:300px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #D1C9C9 inset;
+            background:#F6F0F0;
+            margin-bottom: 40px;
+            display: -webkit-flex;
+            justify-content:space-between;
+            flex-direction:column;
+            align-items:center;
+           
+		}
+		.box>.item{
+			border-radius: 50%;
+			width: 20%;
+			height: 20%;
+			background:black;
+			box-shadow: 0 -10px 5px #595757 inset;
+			color:blue;
+		}
+		.box .item:nth-child(2){
+			align-self:flex-start;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="item">1</div>
+		<div class="item">2</div>
+	</div>
+	<!-- flex垂直居中 -->
+	<div class="center">
+		<div class="item"></div>
+	</div>
+</body>
+</html>

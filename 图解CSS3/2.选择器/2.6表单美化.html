@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>美化表格</title>
+	<style>
+	    *{
+	    	margin: 0;
+	    	padding:0;
+	    }
+		table{
+			width:400px;
+			margin: 0 auto;
+			
+			border-spacing: 0;	
+		}
+		td,th{
+			border:1px solid lime;
+			padding:5px;
+			text-align: center;
+		}
+		table tr{
+			transition:all 0.1s;
+		}
+		table th{
+			background-image: -webkit-linear-gradient(top,#ebf3fc,#dce9f9);
+		}
+		table tr:nth-of-type(2n){
+            background: green;
+		}
+		table th:first-child{
+			border-radius: 10px 0 0 0;
+		}
+		table th:last-child{
+			border-radius: 0 10px 0 0;
+		}
+		table tr:last-child td:first-of-type{
+			border-radius: 0 0 0 10px;
+		}
+		table tr:last-child td:last-of-type{
+			border-radius: 0 0 10px 0;
+		}
+		table tr:not(:first-child):nth-child(2n):hover {
+			background: #fff;
+		}
+		table tr:nth-child(2n+1):hover{
+			background: orange;
+		}
+		table th:not([class=not]){
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<caption>标题</caption>
+		<tr>
+			<th class="not">#</th>
+			<th>fasfds fdsf</th>
+			<th>year</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>dfasdfas</td>
+			<td>1994</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>dfasdf</td>
+			<td>1972</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>dfadfa</td>
+			<td>1974</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>fadsasf</td>
+			<td>1990</td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>闭包</title>
+</head>
+<body>
+	<script type="text/javascript">
+       //闭包就是有权访问另一个函数作用域内的变量的函数
+		function sayHi(age){
+			var text='hello';
+
+			return function(){
+				
+				console.log(this.text+age);
+			};
+		}
+		var text='hello';
+		//当sayHi函数执行完后，会销毁它的执行环境，但活动对象仍然存在于内存，因为返回的匿名函数仍然引用着包含函数的活动对象
+		var result=sayHi('45');//返回一个函数
+		result();//调用
+		result=null;//解除匿名函数的引用，释放内存
+        //闭包与变量
+        function createFunction(){
+        	var result=new Array();
+        	for(var i=0;i<10;i++){//其实将var改成let就可解决
+        		result[i]=function(){
+        			return i;
+        		};
+        	}
+        	return result;
+        }
+        var resultArr=createFunction();
+        console.log('更改前'+resultArr[1]());//不管调用那个函数，值都是10，因为最后引用的时候，都是外部函数的i=10,js没有块级作用域
+        //用另一个匿名函数解决上面问题
+        function createFunction1(){
+        	var result=new Array();
+        	for(var i=0;i<10;i++){
+        		result[i]=function(num){
+        			return function(){
+        				return num;
+        		};
+        	}(i);//立刻调用匿名函数，返回当前的i值
+        	};
+        	return result;
+        
+        }
+        var resultArr1=createFunction1();
+        console.log('更改后'+resultArr1[1]());
+        //关于this对象
+        var name='the window';
+        var object={
+        	name:'my onject',
+        	getNameFunction:function(){
+        		var that=this;
+        		return function(){
+        			return that.name;
+        		};
+        	}
+        };
+        console.log(object.getNameFunction()());
+        //通过将this对象保存到闭包仍然可以访问到变量，就能正常输出对象内的名了
+	</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>element类型</title>
+</head>
+<body>
+	<ul id="list">
+		<li class="item" id="test">title</li>
+		<li class="item">essay</li>
+		<li class="item">kingdom</li>
+
+	</ul>
+	<script type="text/javascript">
+		function showArr(node){
+			console.log('id名：'+node.id);
+			console.log('类名'+node.className);
+			console.log('文档流方向：'+node.dir);
+		}
+		var list=document.getElementById('list');
+		showArr(list);
+		var items=document.getElementsByClassName('item');
+		for(let i=0;i<items.length;i++){
+			console.log('第'+(i+1)+'个元素');
+			showArr(items.item(i));
+			console.log('文本值'+items.item(i).firstChild.nodeValue);
+		}
+		//取特性
+		console.log('取属性'+items[0].getAttribute('class'));
+		//设置特性
+		items[1].setAttribute('title','name');
+		console.log('设置属性'+items[1].getAttribute('title'));
+		items[2].style.color='red';
+		//删除特性
+		console.log(items[0].removeAttribute('id'));
+		//创建元素
+		var newElement=document.createElement('p');
+		newElement.style.background='lime';
+		var newText=document.createTextNode('hello world');
+		document.body.appendChild(newElement);
+		newElement.appendChild(newText);
+
+	</script>
+</body>
+</html>

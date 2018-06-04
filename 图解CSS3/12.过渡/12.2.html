@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>隐式过渡属性</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height:100px;
+			border:1em solid;
+			background: orange;
+			box-sizing: border-box;
+			font-size: 16px;
+			transition:all 2s linear;
+            transition:height 1s linear 99999s;
+		}
+		div:first-child:hover{
+			font-size:20px;
+		}
+		div:nth-child(2):hover{
+			width: 200px;
+			transition: width 4s linear; 
+		}
+		div:nth-child(3):hover{
+             height: 200px;
+             transition:height 2s linear;
+		}
+		div:nth-child(4):before{
+			content: 'hello';
+			font:17px;
+			transition:all 2s;
+		}
+		div:nth-child(4):hover{
+            font:27px;
+		}
+	</style>
+</head>
+<body>
+	<div>中</div>
+	<div>开关状态不同</div>
+	<div>无限延迟</div>
+	<div>伪元素</div>
+</body>
+</html>

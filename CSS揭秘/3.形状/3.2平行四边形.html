@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>平行四边形</title>
+	<style>
+	div{
+		line-height: 50px;
+		height:50px;
+		width: 100px;
+	
+		text-align:center;
+	}
+	div:first-of-type{
+		transform:skew(-45deg);
+			background:lime;
+	}
+	div:first-of-type>span{
+        transform:skew(45deg);
+	}
+	div:nth-of-type(2){
+		position:relative;
+	}
+	div:nth-of-type(2):before{
+		content:"";
+		display: inline-block;
+		position: absolute;
+		left:0;
+		top:0;
+		right:0;
+		bottom:0;
+			background:lime;
+			transform:skew(-45deg);
+			z-index: -1;
+
+	}
+	</style>
+</head>
+<body>
+	<div>
+		<span>乱码</span>
+	</div>
+	<div>伪元素</div>
+</body>
+</html>

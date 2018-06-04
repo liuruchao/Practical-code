@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>document类型</title>
+</head>
+<body>
+	<h3>原本文字</h3>
+	
+	<h3>原本文字</h3>
+</body>
+<script type="text/javascript">
+		var html=document.documentElement;//取得html节点
+		console.log(html==document.firstChild);//非html节点
+		console.log(html==document.childNodes[1]);
+		
+		console.log(html.URL);
+		console.log(document.doctype);
+		
+		document.write('输出流并不会重写整个页面啊');
+	</script>
+</html>

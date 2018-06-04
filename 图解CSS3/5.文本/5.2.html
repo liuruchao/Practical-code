@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>text-overflow</title>
+	<style>
+	.text-overflow-clip,.text-overflow-ellipsis{
+		width: 100px;
+		padding: 10px;
+		border:solid;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+	.text-overflow-clip{
+		text-overflow: clip;
+	}
+	.text-overflow-ellipsis{
+		text-overflow: ellipsis;
+		width: auto;
+	}
+	.blog-news{
+		width: 600px;
+		margin:10px auto;
+	}
+	.blog-news>h2{
+		text-align: center;
+		text-shadow: 1px 1px 1px grey;
+	}
+	.blog-news>ol li>a{
+		display: inline-block;
+		width: 70%;
+		margin:0 5px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		font-weight: 700;
+		text-decoration: none;
+	}
+	.blog-news>ol li>span{
+		display: inline-block;
+		width: 25%;
+		color:#B0A1A1;
+		vertical-align: top;
+	}
+	.word-wrap{
+		width: 100px;
+		border:solid;
+		word-wrap: break-word;
+	}
+	.white-space{
+		border:solid;
+		white-space: pre;
+	}
+</style>
+</head>
+<body>
+	<div class="text-overflow-clip">飞机迪斯科浪费精力受到激发了</div>
+	<div class="text-overflow-ellipsis">飞机迪斯科浪费精力受到激发了发射点发射点法发法发射点发顺丰</div>
+	<div class="blog-news">
+		<h2>最新博文</h2>
+		<ol>
+			<li><a href="#">犯得上法短发短发算法撒旦发射点法发发士大夫士大夫反对反对法地方随风倒十分</a><span>2018.02.21</span></li>
+			<li><a href="#">发生仿盛大范德萨范德萨发生打发打发</a><span>2018.02.21</span></li>
+			<li><a href="#">发生法大师傅大势发到付</a><span>2018.02.21</span></li>
+			<li><a href="#">发射点发射点发射点法算法的说法大师傅电风扇发射点发生发射点发射点发射点</a><span>2018.02.21</span></li>
+			<li><a href="#">发射点发射点发射点发生发生士大夫士大夫十分士大夫十分士大夫沙发上</a><span>2018.02.21</span></li>
+		</ol>
+	</div>
+	<div class="word-wrap">fdhsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</div>
+	<div class="white-space">asf  saf afd     fsdafd</div>
+</body>
+</html>

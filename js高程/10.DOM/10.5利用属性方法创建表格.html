@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>利用属性方法创建表格</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var table=document.createElement('table');
+		table.border=1;
+		var tbody=document.createElement('tbody');
+		table.appendChild(tbody);
+		//创建第一行
+		tbody.insertRow(0);
+		tbody.rows[0].cells[0].appendChild(document.createTextNode("cell 1,1"));
+		tbody.rows[0].cells[1].appendChild(document.createTextNode("cell 1,2"));
+		tbody.insertRow(1);
+		tbody.rows[1].cells[0].appendChild(document.createTextNode("cell 2,1"));
+		tbody.rows[1].cells[1].appendChild(document.createTextNode("cell 2,2"));
+	</script>
+</body>
+</html>

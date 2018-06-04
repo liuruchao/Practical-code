@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>box-sizing布局</title>
+	<style>
+		body,html{
+			height:100%;
+		}
+		*{
+			margin:0;padding:0;
+		}
+		.layout{
+			width: 960px;
+			height: 100%;
+			margin:0 auto;
+			border:1px solid;
+
+		}
+		.layout>.top{
+			background:red;
+			height:15%;
+		}
+		.layout>.middle{
+			background: blue;
+			height:70%;
+		}
+		.layout>.btm{
+			background: red;
+			height:15%;
+			clear: both;
+		}
+		.layout .left{
+			box-sizing: border-box;
+			width: 220px;
+			display: inline-block;
+			height: 100%;
+			background: green;
+			margin-right: 20px;
+		}
+		.layout .right{
+			box-sizing: border-box;
+			width: 720px;
+			display: inline-block;
+			height: 100%;
+			background: green;
+			margin-left: -5px;
+			/*左面凭空多出5px间隙*/
+		}
+		.test{
+			width: 100px;
+			height: 100px;
+			border:1px solid;
+		}
+	</style>
+</head>
+<body>
+	<div class="layout">
+		<!-- 页眉 -->
+		<div class="top"></div>
+		<div class="middle">
+			<div class="left"></div>
+			<div class="right"></div>
+		</div>
+		<!-- 页尾 -->
+		<div class="btm"></div>
+	</div>
+	<div class="test"></div>
+</body>
+</html>

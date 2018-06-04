@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2D</title>
+	<style>
+		.test{
+			width: 500px;
+			height: 500px;
+			border:solid;
+			margin:auto;
+			transform-origin: center;/*默认*/
+		}
+		.test div{
+			width: 200px;
+			height:200px;
+			border:1px solid red;
+			margin-right: 20px;
+			display: inline-block;
+		}
+		.test div:first-child{
+             transform: translate(30px,-30px);
+		}
+		.test div:nth-of-type(2):hover{
+			transform:scale(1.2) rotate(45deg);
+
+		}
+		.test div:last-of-type{
+			transform: skew(45deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="test">
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+</body>
+</html>
